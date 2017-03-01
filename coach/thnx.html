@@ -24,13 +24,13 @@
                     <header class="header">
                         <div class="logo">
                             <h1 class="logo-h1">Александр Колегов</h1>
-                            <div class="logo-h2">Ваш персональный лайф и бизнес-коуч</div>
+                            <div class="logo-h2">Ваш персональный лайф и бизнес-тренер</div>
                             <div class="logo-h3">Для тех, кто хочет повысить свою эффективность</div>
                             <div class="logo-h3">Для тех, кто хочет позитивных изменений в своей жизни.</div>
                             <div class="logo-h3">Для тех, кто готов максимально полно раскрыть и реализовать свой внутренний потенциал.</div>
                         </div>
                         <div class="row">
-                            <div class="col col-5 col-mb-12">
+                            <div class="col col-6 col-mb-12">
                                 <div class="free-consultation" id="consultation">
                                     <p class="free-consultation-h1">Бесплатная консультация</p>
                                     <div class="free-consultation-txt">Вы можете записаться на бесплатную консультацию
@@ -66,7 +66,7 @@
                         <span class="navigation-divider"></span>
                         <a href="#news" data-target="news" class="navigation-link js-move-to">Новости</a>
                         <div class="lk-btn">
-                            <div class="navigation-link js-popup" data-mfp-src="#login">Личный кабинет</div>
+                            <div class="navigation-link js-popup" data-mfp-src="#thnx">Личный кабинет</div>
                         </div>
                     </nav>
                 </div>
@@ -289,7 +289,6 @@
 
             <div class="container news" id="news">
                 <p class="h1">Новости</p>
-
                 <!-- .carousel-type2 -->
                 <div class="carousel-type2 js-news-carousel">
                     <div class="carousel-item">
@@ -455,6 +454,14 @@
         </div>
 
         <!-- modal form -->
+        <div class="mfp-with-anim mfp-hide modal-window thanks" id="thnx">
+            <div class="form-wrap">
+                <p class="modal-h1">Спасибо, что записались!</p>
+                <p class="modal-h3">Я свяжусь с вами для уточнения времени и места консультации</p>
+            </div>
+        </div>
+
+
         <div class="mfp-with-anim mfp-hide modal-window" id="login">
             <div class="form-wrap">
                 <p class="modal-h1">Войти в личный кабинет</p>
@@ -472,15 +479,26 @@
             </div>
 
         </div>
-
         <!--
             scripts.min.js includes:
 
             js/lib/jquery-1.11.1.min.js
+            js/lib/jquery.magnificpopup.min.js
+            js/lib/owl.carousel.min.js
             js/main.js
 
          -->
         <script src="js/lib/jquery-1.11.1.min.js"></script>
         <script src="js/build/scripts.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function  () {
+            $('.js-popup').magnificPopup({
+                type: 'inline',
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'mfp-zoom-in'
+            }).magnificPopup('open');
+        });
+        </script>
     </body>
 </html>
