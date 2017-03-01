@@ -2069,11 +2069,11 @@ fieldset[disabled] .btn-link:focus {
   width: 20px;
   height: 20px;
   vertical-align: text-top;
-  background: url('/local/codenails/images/all-icons.png') 0 0 no-repeat;
+  background: url('local/codenails/images/all-icons.png') 0 0 no-repeat;
 }
 @media screen and (min-resolution: 192dpi) {
   .icon {
-    background-image: url('/local/codenails/images/all-icons@2x.png');
+    background-image: url('local/codenails/images/all-icons@2x.png');
     background-size: '200px 300px';
   }
 }
@@ -5291,7 +5291,7 @@ img.mfp-img {
   margin-top: -10px;
   width: 20px;
   height: 20px;
-  background: url('/local/codenails/images/all-icons.png') no-repeat 0 -20px;
+  background: url('local/codenails/images/all-icons.png') no-repeat 0 -20px;
 }
 @media (min-width: 992px) {
   .top-nav-block li.parent > a {
@@ -6209,11 +6209,11 @@ img.mfp-img {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url('/local/codenails/images/all-icons.png') no-repeat -80px -60px;
+  background: url('local/codenails/images/all-icons.png') no-repeat -80px -60px;
 }
 @media screen and (min-resolution: 192dpi) {
   .mobile-nav ul li.parent a:after {
-    background-image: url('/local/codenails/images/all-icons@2x.png');
+    background-image: url('local/codenails/images/all-icons@2x.png');
     background-size: '200px 300px';
   }
 }
