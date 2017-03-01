@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">	
+	<link rel="stylesheet" href="/local/codenails/css/css_app/template_styles.css">
+</head>
+<body>
+	<div id="app" class="app-container">
+		<div class="center-container">			
+			<div class="settings-master">
+				<div class="btn-close js-close-master">&times;</div>
+				<div class="settings-master-body">
+					<div class="step step-1 active" data-next-step="#step-2" data-btn-text="Завершить настройку">
+						<p class="settings-master-h1">Настройте информацию о магазине</p>
+						<div class="form-control">
+							<label class="input-label">Название интернет-магазина</label>
+							<input type="text" class="input" placeholder="Введите название интернет-магазина">
+						</div>
+
+						<div class="form-control">
+							<label class="input-label">Номер телефона</label>
+							<input type="phone"  class="input input-phone" placeholder="+7 (___) ___-__-__">
+						</div>
+
+						<div class="form-control">
+							<span class="input-label mb10">Логотип</span>							
+								<input 
+									id="radio1" 
+									type="radio" 
+									class="radio js-toggle-logo" 
+									name="radio" 
+									data-target="#text-logo"
+									checked
+								>
+								<label for="radio1"><span></span>Текстовый логотип</label>
+
+								<input 
+									name="radio" 
+									type="radio" 
+									id="radio2" 
+									class="radio js-toggle-logo" 
+									data-target="#upload-file-contailer"
+								>
+								<label for="radio2"><span></span>Изображение</label>							
+						</div>
+
+						<div id="text-logo" class="upload-container is-visible">
+							<div class="form-control">	
+								<label class="input-label">Введите текст для логотипа</label>
+								<input type="text" class="input" placeholder="Введите текст для логотипа">
+							</div>	
+						</div>
+
+						<div id="upload-file-contailer" class="content upload-file-contailer upload-container">
+							<div class="col col-mb-12 col-6 col-dt-6">
+								<div class="file-preview" id="upload-logo-preview"></div>
+							</div>
+							<div class="col col-mb-12 col-6 col-dt-6">
+								<div class="upload-file">									
+									<input 
+										type="file"  
+										id="upload-logo" 
+										class="input-file js-file-upload" 
+										data-preview="#upload-logo-preview" 
+										data-field="#upload-logo" 
+										data-width="500" 
+										data-height="400" 
+										data-error="#upload-logo-error"
+									>
+									<label for="upload-logo">Выбрать файл</label>
+									<div class="upload-file-note">
+										Максимальный размер изображения: 500px по ширине, 400px по высоте
+									</div>
+								</div>
+							</div>
+							<div class="col col-mb-12">								
+								<div class="upload-error-wrapper">
+									<div id="upload-logo-error" class="upload-error"></div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-control">
+							<span class="input-label">Валюта</span>
+							<div class="buttons-line">
+								<div class="buttons-line-item hide js-select-currency">Тенге</div>
+								<div class="buttons-line-item active first js-select-currency">Рубль</div>
+								<div class="buttons-line-item js-select-currency">Доллар</div>
+								<div class="buttons-line-item hide js-select-currency">Франк</div>
+								<div class="buttons-line-item js-select-currency">Евро</div>
+								<div class="buttons-line-item js-select-currency">Гривна</div>
+								<div class="buttons-line-item last js-select-currency">Песо</div>
+								<div class="buttons-line-item hide js-select-currency">Драм</div>
+							</div>
+						</div>
+					</div> <!-- .step step-1 active -->
+
+					<div id="step-2" class="step step-2" data-next-step="#step-3" data-btn-text="Настроить все" data-btn-text-close="Закрыть окно">
+						<p class="settings-master-h1">Настройте внешний вид</p>
+						<div class="content">
+							<div class="col col-mb-12 col-8 col-dt-8">
+								<span class="input-label">Выберите тему оформления:</span>
+								<div class="content">
+									<div class="pl15 pr15">
+										<div class="theme-data-preview"></div>
+										<div class="theme-title">
+											<input type="radio" class="radio" name="theme" id="theme1" checked>
+											<label for="theme1">
+												<span></span> Светлый
+											</label>
+										</div>
+									</div>
+									<div class="pl15 pr15">
+										<div class="theme-data-preview"></div>
+										<div class="theme-title">
+											<input type="radio" class="radio" name="theme" id="theme2">
+											<label for="theme2">
+												<span></span> Тёмный
+											</label>
+										</div>
+									</div>
+									<div class="pl15 pr15">
+										<div class="theme-data-preview"></div>
+										<div class="theme-title">
+											<input type="radio" class="radio" name="theme" id="theme3">
+											<label for="theme3">
+												<span></span> Фиолетовый
+											</label>
+										</div>
+									</div>
+									<div class="pl15 pr15">
+										<div class="theme-data-preview"></div>
+										<div class="theme-title">
+											<input type="radio" class="radio" name="theme" id="theme4">
+											<label for="theme4">
+												<span></span> Светлый
+											</label>
+										</div>
+									</div>
+									<div class="pl15 pr15">
+										<div class="theme-data-preview"></div>
+										<div class="theme-title">
+											<input type="radio" class="radio" name="theme" id="theme5">
+											<label for="theme5">
+												<span></span> Светлый
+											</label>
+										</div>
+									</div>
+									<div class="pl15 pr15">
+										<div class="theme-data-preview"></div>
+										<div class="theme-title">
+											<input type="radio" class="radio" name="theme" id="theme6">
+											<label for="theme6">
+												<span></span> Светлый
+											</label>
+										</div>
+									</div>
+								</div> <!-- .content -->
+							</div>
+							<div class="col col-mb-12 col-4 col-dt-4">
+								<span class="input-label">Фоновое изображение:</span>
+								<div class="form-control check-bg">
+									<input 
+										type="checkbox" 
+										id="check-bg" 
+										class="checkbox js-toggle-upload-bg" 
+										data-upload-block="#upload-bg-container"
+										checked
+									>
+									<label for="check-bg">
+										<span></span> Загрузить свое фоновое изображение
+									</label>
+								</div>
+								<div id="upload-bg-container" class="upload-container is-visible">
+									<p class="input-label">Вы можете загрузить картинку, которая будет установлена фотоном для публичной страницы с формой</p>
+									<div id="upload-bg-preview" class="file-preview-bg"></div>
+									<div class="upload-file mb20">									
+										<input 
+											type="file"  
+											id="upload-bg" 
+											class="input-file js-file-upload" 
+											data-preview="#upload-bg-preview" 
+											data-field="#upload-bg" 
+											data-width="1920" 
+											data-height="1000" 
+											data-error="#upload-bg-error"
+										>
+										<label for="upload-bg">Загрузить</label>
+									</div>
+									<div class="upload-error-wrapper">
+										<div id="upload-bg-error" class="upload-error"></div>
+									</div>
+								</div>
+							</div>
+						</div> <!-- .content -->
+					</div> <!-- .step step-2 -->
+
+					<div id="step-3" class="step step-3">
+						<div class="thanks-mess-container">		
+							<p class="thanks-mess">Спасибо за настройку</p>
+							<p class="thanks-mess">Остальные настройки вы можете заполнить в <a href="#" target="_blank">админ. панели</a></p>
+						</div>
+					</div> <!-- .step step-3 -->
+				</div> <!-- .settings-master-body -->
+				<div class="settings-master-footer">
+					<button type="button" class="btn js-close-master">Настроить позже</button>	
+					<button type="button" class="btn btn-secondary js-next-step">Настроить вид</button>	
+				</div> <!-- .settings-master-footer -->
+			</div>
+			<!-- .settings-master -->
+		</div> <!-- .center-container -->
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="/local/codenails/js/js_app/slick.min.js"></script>
+	<script src="/local/codenails/js/js_app/jquery.maskedinput.min.js"></script>
+	<script src="/local/codenails/js/js_app/main.js"></script>
+</body>
+</html>

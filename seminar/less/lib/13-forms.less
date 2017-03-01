@@ -1,0 +1,243 @@
+/* ==========================================================================
+   FORMS */
+/* ========================================================================== */
+
+	.input {
+		display: inline-block;
+		height: @inputHeight;
+		padding: 8px 8px 6px 8px;
+		position: relative;
+		margin-bottom: @baseLineHeight / 2;
+		font-size: 16px;
+		color: @textColor;
+		vertical-align: middle;
+		border: solid 1px @gray;
+		outline: none;
+		background-color: @white;
+		-webkit-appearance: none;
+
+		.box-sizing();
+
+		&:focus {
+			outline: none;
+			border-color: @grayDark;
+		}
+		textarea& {
+			height: auto;
+			border: solid 1px @gray;
+			background: @white;
+			&:focus {
+				background: @white;
+				border-color: @gray1;
+			}
+		}
+
+		select& {
+			padding: 0;
+			-webkit-appearance: menulist;
+		} 
+
+		&[type="number"],
+		&[type="date"] {
+			padding: 0 0 0 8px; // убираем отступы у этих типов полей иначе будет некрасиво.
+		}
+
+		&-required,
+		&[required] {
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI5JREFUeNpi/P//PwM1ARMDlcGogaMGkgEYdysrEK3Y5c59klzoC8T7gPgzFIPYPuR6uQWINwGxIxDzQDGIvRkqR5KBIFdU41FTDXU90QYWEaGukBQDTYhQZ0LtZMNIioFniFB3mhQD+4lQ10+KgaCk0YpHTStUDUlhWAPE/kC8H4i/QjGI7QeVIxoABBgA0UkaIFtFpqkAAAAASUVORK5CYII=');
+			background-size: 10px 10px;
+			background-repeat: no-repeat;
+			background-position: 100% 0;
+		} //.input-required
+	}
+	.input-block-level,
+	.input-block {
+		width: 100%;
+	}
+
+	.checkbox {
+		position: absolute;
+		left: -9999px;
+
+		+ label {
+			cursor: pointer;
+			margin-top: 4px;
+			display: inline-block;
+			.user-select;
+
+			> span {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				margin: -2px 4px 0 0;
+				vertical-align: middle;
+				background:  @white;
+				cursor: pointer;
+				border: solid 2px @gray1;
+				border-radius: 4px;
+				position: relative;
+			}
+			&:hover {
+				> span {
+					border-color: @gray1;
+				}
+			}
+		}
+
+		&:checked + label > span {
+			border-color: @gray1;
+
+			&:before {
+				content: ' ';
+				position: absolute;
+				border: solid @red;
+				border-width: 0 0 2px 2px;
+				height: 5px;
+				width: 11px;
+				left: 2px;
+				top: 3px;
+				.rotate;
+			}
+		}
+		&:focus + label > span {
+			border-color: @red;
+		}
+		&:focus + label {
+			color: @red;
+		}
+		&:checked:disabled + label > span,
+		&:checked:disabled + label:hover > span {
+			border-color: @gray1;
+			background-color: lighten(@gray1, 20%);
+			cursor: default;
+			&:before {
+				border-color: @gray1;
+			}
+		}
+
+		&:disabled + label > span,
+		&:disabled + label > span:hover,
+		&:disabled + label:hover > span {
+			border-color: @gray1;
+			background-color: lighten(@gray1, 10%);
+			cursor: default;
+			&:before {
+				border-color: @gray1;
+			}
+		}
+
+		&:disabled + label,
+		&:disabled + label:hover {
+			color: @gray1;
+			cursor: default;
+		}
+
+	}
+
+	.radio {
+		position: absolute;
+		left: -9999px;
+
+		+ label {
+			cursor: pointer;
+			margin-top: 4px;
+			display: inline-block;
+
+			> span {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				margin: -2px 4px 0 0;
+				vertical-align: middle;
+				background:  @white;
+				cursor: pointer;
+				border: solid 2px @gray1;
+				position: relative;
+				.border-radius(10px);
+			}
+			&:hover,
+			&:focus {
+				> span {
+					border-color: @gray1;
+				}
+			}
+		}
+
+		&:checked + label > span {
+			border-color: @gray1;
+
+			&:before {
+				content: ' ';
+				position: absolute;
+				height: 10px;
+				width: 10px;
+				background: @red;
+				left: 3px;
+				top: 3px;
+				.border-radius(5px);
+			}
+		}
+		&:focus + label > span {
+			border-color: @red;
+		}
+		&:focus + label {
+			color: @red;
+		}
+		&:checked:disabled + label > span,
+		&:checked:disabled + label:hover > span {
+			border-color: @gray1;
+			background-color: lighten(@gray1, 20%);
+			cursor: default;
+			&:before {
+				background: @gray1;
+			}
+		}
+
+		&:disabled + label > span,
+		&:disabled + label > span:hover,
+		&:disabled + label:hover > span {
+			border-color: @gray1;
+			background-color: lighten(@gray1, 10%);
+			cursor: default;
+			&:before {
+				background: @gray1;
+			}
+		}
+
+		&:disabled + label,
+		&:disabled + label:hover {
+			color: @gray1;
+			cursor: default;
+		}
+	}
+
+	.quont-input {
+		width: 40px;
+	}
+
+.bx-auth-reg {
+	.alert {
+		p {
+			margin: 0 !important;
+		}
+	}
+}
+
+.form-control {
+	margin: 1em 0;
+	.input {
+		margin: 0;
+	}
+}
+.form-label {
+	@media (min-width: @screenTablet) {
+		text-align: right;
+	}
+	display: inline-block;
+	// padding-top: 5px;
+	vertical-align: middle;
+	.box-sizing;
+}
+
+
+

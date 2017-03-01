@@ -1,0 +1,216 @@
+
+// Button sizes
+// -------------------------
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+	padding: @padding-vertical @padding-horizontal;
+	font-size: @font-size;
+	line-height: @line-height;
+	border-radius: @border-radius;
+}
+
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core styles
+.btn {
+	display: inline-block;
+	color: @btnColor;
+	margin-bottom: 0; // For input.btn
+	font-weight: @btnFontWeight;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	background: @btnBg;
+	border: 0;
+	text-decoration: none;
+	white-space: nowrap;
+	.button-size(6px, 10px, 18px, @baseLineHeight, @inputBorderRadius);
+	.user-select();
+	.transition;
+	.box-shadow(~"1px 1px 2px rgba(0,0,0,.1)");
+
+	&:focus {
+		.tab-focus();
+	}
+
+	&:hover,
+	&:focus {
+		color: @btnHoverColor;
+		background: @btnHoverBg;
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		outline: 0;
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		cursor: not-allowed;
+		pointer-events: none; // Future-proof disabling of clicks
+		opacity: .65;
+		.box-shadow(none);
+	}
+	&-gray {
+		background: lighten(@gray, 10%);
+		color: @white;
+
+		&:hover,
+		&:focus {
+			color: @gray;
+			background: @gray;
+			text-decoration: none;
+			color: @white;
+		}
+
+		&:active,
+		&.active {
+			background: @gray;
+			color: @white;
+		}
+	} //.btn-gray
+
+	&-border {
+		border: solid 2px @btnBg;
+		color: @btnBg;
+		background: transparent;
+
+		&:hover,
+		&:focus {
+			color: @btnColor;
+			background: @btnBg;
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			outline: 0;
+		}
+	} //.btn-border
+
+
+	&-red {
+		background: @red;
+		color: @white;
+
+		&:hover,
+		&:focus {
+			background: @redDark;
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			background: @redDark;
+		}
+	} //.btn-red
+
+
+	&-green {
+		background: @green;
+		color: @white;
+
+		&:hover,
+		&:focus {
+			background: @greenDark;
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			background: @greenDark;
+		}
+	} //.btn-green
+
+} //.btn
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+	color: @linkColor;
+	font-weight: normal;
+	cursor: pointer;
+	border-radius: 0;
+	background-color: transparent;
+
+	&,
+	&:active,
+	&[disabled],
+	fieldset[disabled] & {
+		.box-shadow(none);
+	}
+
+	&:hover,
+	&:focus {
+		color: @linkHoverColor;
+		text-decoration: underline;
+	}
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus {
+			color: @btnDisableColor;
+			text-decoration: none;
+		}
+	}
+}
+
+.btn-super {
+	padding: 15px;
+	text-transform: uppercase;
+	font-size: 22px;
+}
+.btn-big {
+	font-size: 18px;
+	padding: 10px 20px;
+	small {
+		display: block;
+		margin-top: -5px;
+		font-size: 12px;
+	}
+}
+
+.btn-square {
+	.border-radius(0);
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+	display: block;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	.box-sizing();
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+	margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}
+
+
+
+

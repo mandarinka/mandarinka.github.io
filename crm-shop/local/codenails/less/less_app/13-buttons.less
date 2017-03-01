@@ -1,0 +1,333 @@
+/* ==========================================================================
+   BUTTONS */
+/* ========================================================================== */
+	
+
+.btn {
+	display: inline-block;
+	color: @btnColor;
+	margin-bottom: 0; // For input.btn
+	// font: 400 12px/@inputHeight @opensans;
+	font-weight: 700;
+	font-family: @opensans;
+	font-size: 12px;
+	line-height: @inputHeight;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	background: #fff;
+	border: 1px solid #c6cdd3;
+	text-decoration: none;
+	white-space: nowrap;
+	height: @inputHeight;
+	padding: 0 20px;
+	border-radius: 2px;
+	.user-select();
+	.transition;
+	.box-sizing;
+
+	&:focus {
+		.tab-focus();
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+		background: @btnHoverBackground;
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		outline: 0;
+		background: #ecedef;
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		cursor: not-allowed;
+		pointer-events: none; // Future-proof disabling of clicks
+		opacity: .65;
+	}
+
+	// Пример кастомизации кнопки
+	&-primary {
+		background: @primary;
+		border-color: @primary;
+		color: @white;
+
+		&:hover,
+		&:focus {
+			color: @white;
+			background: #3fddff;
+			border-color: #3fddff;
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			color: @white;
+			background: #13b1e3;
+			border-color: #13b1e3;
+		}
+	} //.btn-primary
+
+	&-secondary {
+		background: @secondary;
+		border-color: @secondary;
+
+		&:hover,
+		&:focus {
+			background: #d2f95f;
+			border-color: #d2f95f;
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			background: #b2e233;
+			border-color: #b2e233;
+		}
+	} //.btn-secondary
+
+	&-additional {
+		background: @additional;
+		color: @white;
+
+		&:hover,
+		&:focus {
+			color: @white;
+			background: #5b6573;
+			border-color: #5b6573;
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			color: @white;
+			background: #3b506e;
+			border-color: #3b506e;
+		}
+	} //.btn-additional
+
+	&-default {
+		background: #eef2f4;
+		border-color: #eef2f4;
+		color: @textColor;
+
+		&:hover,
+		&:focus {
+			background: darken(#eef2f4, 10%);
+			border-color: darken(#eef2f4, 10%);
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			background: darken(#eef2f4, 10%);
+			border-color: darken(#eef2f4, 10%);
+		}
+	} //.btn-default
+
+
+	// Блочные кнопки
+	&-block {
+		display: block;
+		width: 100%;
+		.box-sizing();
+
+		+ .btn-block {
+			margin-top: 5px;
+		}
+
+		input[type="submit"]&,
+		input[type="reset"]&,
+		input[type="button"]& {
+			width: 100%;
+		}
+	} // .btn-block
+
+
+	// Пример квадратной кнопки
+	&-square {
+		border-radius: 0;
+	} //.btn-square
+
+	// Кнопки-ссылки
+	&-link {
+		color: @linkColor;
+		cursor: pointer;
+		border-radius: 0;
+		background-color: transparent;
+		padding-left: 0;
+		padding-right: 0;
+
+		&,
+		&:active,
+		&[disabled],
+		fieldset[disabled] & {
+			background-color: transparent;
+			.box-shadow(none);
+		}
+
+		&:hover,
+		&:focus {
+			color: @linkHoverColor;
+			text-decoration: underline;
+			background-color: transparent;
+		}
+		&[disabled],
+		fieldset[disabled] & {
+			&:hover,
+			&:focus {
+				background-color: transparent;
+				color: @linkHoverColor;
+				text-decoration: none;
+			}
+		}
+	} //.btn-link
+	
+	// Размеры кнопок
+	&-big {
+		height: @inputHeight + 8;
+		line-height: @inputHeight + 8;
+		padding: 0 22px;
+		border-radius: 40px;
+	} //.btn-big
+
+	&-small {
+		height: @inputHeight - 4;
+		font: normal 14px @ptsans;
+		line-height: @inputHeight - 4;
+		padding: 0 10px;
+		min-width: 15px;
+	} //.btn-small
+
+	&-mini {
+		height: @inputHeight - 12;
+		font: normal 13px @ptsans;
+		line-height: @inputHeight - 12;
+		padding: 0 10px;
+	} //.btn-mini
+
+	&-outline {
+		background-color: transparent;
+		color: @btnBackground;
+		border: solid 1px @inputBorderLight;
+		line-height: @inputHeight - 2;
+
+		&:hover,
+		&:focus {
+			color: @white;
+			background: @btnBackground;
+			text-decoration: none;
+			border-color: @btnBackground;
+		}
+
+		&:active,
+		&.active {
+			color: @white;
+			background: @btnHoverBackground;
+			border-color: @btnHoverBackground;
+		}
+
+
+		&.btn-big {
+			line-height: @inputHeight + 6;
+		}
+		
+		&.btn-small {
+			line-height: @inputHeight - 6;
+		}
+		&.btn-mini {
+			line-height: @inputHeight - 14;
+		}
+
+		&.disabled {
+			color: @textColor;
+		}
+
+
+	} //.btn-outline
+
+	&-remove-el {
+		font-size: 12px;
+		font-weight: normal;
+		margin-top: 23px;
+		text-transform: none;
+		&:first-letter {
+			text-transform: uppercase;
+		}
+		.fa {
+			margin-right: 5px;
+		}
+	} //.btn-remove-el
+
+	&-toggle-block {
+		min-width: 135px;
+		text-align: left;
+		position: relative;
+		&:after {
+			.after;
+			width: 0;
+			height: 0;
+			display: block;
+			border-top: 6px solid @textColor;
+			border-right: 4px solid transparent;
+			border-left: 4px solid transparent;
+			top: 0;
+			bottom: 0;
+			right: 15px;
+			margin: auto;
+			.transition();
+		}
+
+
+		&.active {
+			&:after{
+				.transform(rotate(-180deg));
+			}
+		}
+	} //.toggle-block
+
+} //.btn
+
+.btn-close {
+	font-size: 24px;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	color: #b0b8c1;
+	font-family: @opensans;
+	font-weight: 400;
+	text-align: center;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+	.transition();
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.btn-dashed {
+	display: inline-block;
+	border-bottom: 1px dashed @textColor;
+	cursor: pointer;
+
+	&.active {
+		color: lighten(@textColor, 25%);
+		border-bottom-color: lighten(@textColor, 25%);
+	}
+}
+@media (max-width: @screenTablet) {
+	.btn-close {
+		top: 0;
+		right: 0;
+	}
+}

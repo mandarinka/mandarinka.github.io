@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="7 days">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Метрополис</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700,500,400&amp;subset=cyrillic' rel='stylesheet' type='text/css'>
+        <link href="css/reset.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="css/media.css" rel="stylesheet" type="text/css">
+        <link href="http://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+        <script src="js/infobubble.min.js" type="text/javascript"></script>
+        <script src="js/map.js" type="text/javascript"></script>
+        <script src="js/common.js" type="text/javascript"></script>
+    </head>
+    <body>
+<!-- #Header -->
+        <div class="header-fixed">
+            <div class="header">
+                <div class="top-menu">
+                    <a href="index.html" class="active">На карте</a>
+                    <a href="company.html">О компании</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="partners.html">Партнеры</a>
+                    <a href="investment.html">Инвестиции</a>
+                    <a href="articles.html">Блог</a>
+                </div>
+                <div class="fr">
+                    <a href="" class="callback" target="_blank" rel="nofollow"><span>Заказать звонок</span></a>
+                    <a href="tel:+78452123456" class="phone">+7 (8452) 12-34-56</a>
+                </div>
+            </div>
+            <!-- #Description -->
+            <div class="head-after">
+                <div class="logo fl"><img src="images/logo.png" alt=""></div>
+                <div class="description fr">Новостройки Саратова и Энгельса</div>
+            </div>
+            <!-- #Description end -->
+        </div>
+<!-- #Header end -->
+<!-- #Siderbar -->
+        <div class="sidebar">
+            <!-- #Sorting tab -->
+            <div class="sorting" id="tabs">
+                <div class="tab-navigation">
+                    <a href="#tab1" class="first-tab">Новостройка</a>
+                    <a href="#tab2" class="second-tab">Вторичное</a>
+                    <a href="#tab3" class="third-tab">Коммерческая</a>
+                </div>
+                <div class="tab-wr">
+<!-- #Tab 1 -->
+                    <div id="tab1" class="clearfix">
+                        <form action="" name="">
+                            <div class="line-tab">
+                                <div class="line-tab-l">Город</div>
+                                <div class="line-tab-r choice-city">
+                                    <div class="label-city">
+                                        <input type="radio" name="saratov" id="saratov" hidden checked>
+                                        <label for="saratov">Саратов</label>
+                                    </div>
+                                    <div class="label-city">
+                                        <input type="radio" name="saratov" id="engels" hidden>
+                                        <label for="engels">Энгельс</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Район</div>
+                                <div class="line-tab-r">
+                                    <input type="text" name="district" placeholder="Начните вводить район">
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Тип дома</div>
+                                <div class="line-tab-r type-house">
+                                    <input id="brick" type="checkbox" name="brick" hidden checked>
+                                    <label for="brick">Кирпичный</label>
+                                    <input id="panel" type="checkbox" name="panel" hidden>
+                                    <label for="panel">Панельный</label>
+                                    <input id="monolith" type="checkbox" name="monolith" hidden>
+                                    <label for="monolith">Монолитный</label>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Пощадь <span>м&sup2;</span></div>
+                                <div class="line-tab-r">
+                                    <div class="area-start">
+                                        <span>от</span> 
+                                        <div class="ui-area-start">
+                                            <input type="text" class="result-area-start">
+                                            <div class="slide ui-area-on"></div>
+                                        </div>
+                                    </div>
+                                    <div class="area-end">
+                                        <span>до</span>
+                                        <div class="ui-area-end">
+                                            <input type="text" class="result-area-end">
+                                            <div class="slide ui-area-off"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l room">Количество <span class="new-line">комнат</span></div>
+                                <div class="line-tab-r">
+                                    <div class="ui-step">
+                                        <span>1</span>
+                                        <span>2</span>
+                                        <span>3</span>
+                                        <span>4</span>
+                                        <span>5</span>
+                                    </div>
+                                    <div class="ui-room slider-range"></div>
+                                    <input type="text" class="amount" value="" hidden>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Цена <span>руб.</span></div>
+                                <div class="line-tab-r">
+                                    <div class="price-start">
+                                        <span>от</span> 
+                                        <div class="ui-price-start">
+                                            <input type="text" class="result-price-start">
+                                            <div class="slide ui-price-on"></div>
+                                        </div>
+                                    </div>
+                                    <div class="price-end">
+                                        <span>до</span>
+                                        <div class="ui-price-end">
+                                            <input type="text" class="result-price-end">
+                                            <div class="slide ui-price-off"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+<!-- #end Tab 1 -->
+<!-- #Tab 2 -->
+                    <div id="tab2" class="clearfix">
+                        <form action="" name="">
+                            <div class="line-tab">
+                                <div class="line-tab-l">Город</div>
+                                <div class="line-tab-r choice-city">
+                                    <div class="label-city active">
+                                        <input type="radio" name="saratov" id="saratov2" hidden checked>
+                                        <label for="saratov2">Саратов</label>
+                                    </div>
+                                    <div class="label-city">
+                                        <input type="radio" name="saratov" id="engels2" hidden>
+                                        <label for="engels2">Энгельс</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Район</div>
+                                <div class="line-tab-r">
+                                    <input type="text" name="district" placeholder="Начните вводить район">
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Тип дома</div>
+                                <div class="line-tab-r type-house">
+                                    <input id="apartment" type="checkbox" name="brick" hidden checked>
+                                    <label for="apartment">Квартира</label>
+                                    <input id="house" type="checkbox" name="panel" hidden>
+                                    <label for="house">Дом</label>
+                                    <input id="room" type="checkbox" name="monolith" hidden>
+                                    <label for="room">Комната</label>
+                                    <input id="garage" type="checkbox" name="monolith" hidden>
+                                    <label for="garage">Гараж</label>
+                                    <input id="sector" type="checkbox" name="monolith" hidden>
+                                    <label for="sector">Участок</label>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Пощадь <span>м&sup2;</span></div>
+                                <div class="line-tab-r">
+                                    <div class="area-start">
+                                        <span>от</span> 
+                                        <div class="ui-area-start">
+                                            <input type="text" class="result-area-start">
+                                            <div class="slide ui-area-on"></div>
+                                        </div>
+                                    </div>
+                                    <div class="area-end">
+                                        <span>до</span>
+                                        <div class="ui-area-end">
+                                            <input type="text" class="result-area-end">
+                                            <div class="slide ui-area-off"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l room">Количество <span class="new-line">комнат</span></div>
+                                <div class="line-tab-r">
+                                    <div class="ui-step">
+                                        <span>1</span>
+                                        <span>2</span>
+                                        <span>3</span>
+                                        <span>4</span>
+                                        <span>5</span>
+                                    </div>
+                                    <div class="ui-room slider-range"></div>
+                                    <input type="text" class="amount" value="" hidden>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Цена <span>руб.</span></div>
+                                <div class="line-tab-r">
+                                    <div class="price-start">
+                                        <span>от</span> 
+                                        <div class="ui-price-start">
+                                            <input type="text" class="result-price-start">
+                                            <div class="slide ui-price-on"></div>
+                                        </div>
+                                    </div>
+                                    <div class="price-end">
+                                        <span>до</span>
+                                        <div class="ui-price-end">
+                                            <input type="text" class="result-price-end">
+                                            <div class="slide ui-price-off"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+<!-- #end Tab 2 -->
+<!-- #Tab 3 -->
+                    <div id="tab3" class="clearfix">
+                        <form action="" name="">
+                            <div class="line-tab">
+                                <div class="line-tab-l">Город</div>
+                                <div class="line-tab-r choice-city">
+                                    <div class="label-city active">
+                                        <input type="radio" name="saratov" id="saratov3" hidden checked>
+                                        <label for="saratov3">Саратов</label>
+                                    </div>
+                                    <div class="label-city">
+                                        <input type="radio" name="saratov" id="engels3" hidden>
+                                        <label for="engels3">Энгельс</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Район</div>
+                                <div class="line-tab-r">
+                                    <input type="text" name="district" placeholder="Начните вводить район">
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Тип дома</div>
+                                <div class="line-tab-r type-house">
+                                    <input id="shop" type="checkbox" name="brick" hidden checked>
+                                    <label for="shop">Магазин</label>
+                                    <input id="retail" type="checkbox" name="panel" hidden>
+                                    <label for="retail">Торговое<br>помещение</label>
+                                    <input id="warehouse" type="checkbox" name="monolith" hidden>
+                                    <label for="warehouse">Склад</label>
+                                    <input id="office" type="checkbox" name="monolith" hidden>
+                                    <label for="office">Офис</label>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Пощадь <span>м&sup2;</span></div>
+                                <div class="line-tab-r">
+                                    <div class="area-start">
+                                        <span>от</span> 
+                                        <div class="ui-area-start">
+                                            <input type="text" class="result-area-start">
+                                            <div class="slide ui-area-on"></div>
+                                        </div>
+                                    </div>
+                                    <div class="area-end">
+                                        <span>до</span>
+                                        <div class="ui-area-end">
+                                            <input type="text" class="result-area-end">
+                                            <div class="slide ui-area-off"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-tab">
+                                <div class="line-tab-l">Цена <span>руб.</span></div>
+                                <div class="line-tab-r">
+                                    <div class="price-start">
+                                        <span>от</span> 
+                                        <div class="ui-price-start">
+                                            <input type="text" class="result-price-start">
+                                            <div class="slide ui-price-on"></div>
+                                        </div>
+                                    </div>
+                                    <div class="price-end">
+                                        <span>до</span>
+                                        <div class="ui-price-end">
+                                            <input type="text" class="result-price-end">
+                                            <div class="slide ui-price-off"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+<!-- #end Tab 3 -->
+                </div>
+            </div>
+            <!-- #Sorting tab end-->
+            <!-- #Calaloque -->
+            <div class="cataloque">
+                <div class="cataloque-nav">
+                    <div class="pagination">
+                        <a href="#" class="prev"></a>
+                        <a href="" class="active">1</a>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                        <span>...</span>
+                        <a href="">24</a>
+                        <a href="#" class="next"></a>
+                        <div class="info">1-20 из 250 объявлений</div>
+                    </div>
+                    <div class="navigation js-type-nav">
+                        Вид: <a href="javascript:void(0);" class="type-tiles" data-type="0">плитка</a>
+                        <a href="javascript:void(0);" class="type-table" data-type="1">таблица</a>
+                    </div>
+                </div>
+                <!-- #Catalog items -->
+                <div class="cataloque-items cataloque-items--standart">
+                    <!-- #Catalog item -->
+                    <div class="cataloque-item">
+                        <div class="item-pic">
+                            <div class="pic"><a href="object.html"><img src="images/cataloque-img.jpg" alt=""></a></div>
+                            <a href="" target="_blank" rel="nofollow" class="callback"></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="title"><a href="object.html"><span>Близнецы на блинова</span></a></div>
+                            <div class="adress">
+                                Кронверк
+                                <span>Ул.&nbsp;Блинова, д.&nbsp;17</span>
+                            </div>
+                            <div class="type">
+                                900&nbsp;квартир<br>
+                                9-10&nbsp;этажей<br>
+                                11&nbsp;подъезда<br>
+                                монолитный дом
+                            </div>
+                            <div class="item-price">
+                                <table>
+                                    <tr>
+                                        <td class="text-l">2 ком.</td>
+                                        <td>10 кв.</td>
+                                        <td>2&nbsp;000&nbsp;000 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-l">2 ком.</td>
+                                        <td>1 кв.</td>
+                                        <td>2&nbsp;530&nbsp;000 руб.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="item-abstract">
+                                Монолитный многоэтажный жилой дом #3 по генплану со встроенным продовольственным магазином и подземным гаражом в районе пересечения ул. Высокой и ул. Связистов... 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #Catalog item end -->
+                    <!-- #Catalog item -->
+                    <div class="cataloque-item">
+                        <div class="item-pic">
+                            <div class="pic"><a href=""><img src="images/catalogue-img2.jpg" alt=""></a></div>
+                            <a href="" target="_blank" rel="nofollow" class="callback"></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="title"><a href="object.html"><span>Элитый комплекс &laquo;Алые паруса&raquo;</span></a></div>
+                            <div class="adress">
+                                ЖБК-3
+                                <span>Ул.&nbsp;Академика Антонова, д.&nbsp;34</span>
+                            </div>
+                            <div class="type">
+                                540 квартир<br>
+                                17 этажей<br>
+                                4 подъезда<br>
+                                кирпичный дом
+                            </div>
+                            <div class="item-price">
+                                <table>
+                                    <tr>
+                                        <td class="text-l">2 ком.</td>
+                                        <td>5 кв.</td>
+                                        <td>1&nbsp;830&nbsp;000 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-l">2 ком.</td>
+                                        <td>5 кв.</td>
+                                        <td>1&nbsp;830&nbsp;000 руб.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="item-abstract">
+                                Современные квартиры в многоэтажном доме со встроенными помещениями общественного назначения и подземной гараж-стоянкой на 144 машино/места.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #Catalog item end -->
+                    <!-- #Catalog item -->
+                    <div class="cataloque-item">
+                        <div class="item-pic">
+                            <div class="pic"><a href="object.html"><img src="images/cataloque-img3.jpg" alt=""></a></div>
+                            <a href="" target="_blank" rel="nofollow" class="callback"></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="title"><a href="object.html"><span>Солнечный 1&nbsp;А</span></a></div>
+                            <div class="adress">
+                                Кронверк<br>
+                                <span>Ул.&nbsp;Блинова, д.&nbsp;17</span>
+                            </div>
+                            <div class="type">
+                                900&nbsp;квартир<br>
+                                9-10&nbsp;этажей<br>
+                                11&nbsp;подъезда<br>
+                                монолитный дом
+                            </div>
+                            <div class="item-price">
+                                <table>
+                                    <tr>
+                                        <td class="text-l">2 ком.</td>
+                                        <td>10 кв.</td>
+                                        <td>2&nbsp;000&nbsp;000 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-l">2 ком.</td>
+                                        <td>1 кв.</td>
+                                        <td>2&nbsp;530&nbsp;000 руб.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="item-abstract">
+                                Монолитный многоэтажный жилой дом #3 по генплану со встроенным продовольственным магазином и подземным гаражом в районе пересечения ул. Высокой и ул. Связистов... 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #Catalog item end -->
+                    <!-- #Catalog item -->
+                    <div class="cataloque-item">
+                        <div class="item-pic">
+                            <div class="pic"><a href="object.html"><img src="images/cataloque-img4.jpg" alt=""></a></div>
+                            <a href="" target="_blank" rel="nofollow" class="callback"></a>
+                        </div>
+                        <div class="item-info">
+                            <div class="title"><a href="object.html"><span>Жилой массив &laquo;Юность&raquo;</span></a></div>
+                            <div class="adress">
+                                ЖБК-3<br>
+                                <span>Ул.&nbsp;Академика Антонова, д.&nbsp;34</span>
+                            </div>
+                            <div class="type">
+                                540&nbsp;квартир<br>
+                                17&nbsp;этажей<br>
+                                4&nbsp;подъезда<br>
+                                кирпичный дом
+                            </div>
+                            <div class="item-price">
+                                <table>
+                                    <tr>
+                                        <td class="text-l">2 ком.</td>
+                                        <td>5 кв.</td>
+                                        <td>1&nbsp;830&nbsp;000 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-l">2 ком.</td>
+                                        <td>5 кв.</td>
+                                        <td>1&nbsp;830&nbsp;000 руб.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="item-abstract">
+                                Современные квартиры в многоэтажном доме со встроенными помещениями общественного назначения и подземной гараж-стоянкой на 144 машино/места.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #Catalog item end -->
+                </div>
+                <!-- #Calaloque items end -->
+                <div class="cataloque-nav">
+                    <div class="pagination">
+                        <a href="#" class="prev"></a>
+                        <a href="" class="active">1</a>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                        <span>...</span>
+                        <a href="">24</a>
+                        <a href="#" class="next"></a>
+                        <div class="info">1-20 из 250 объявлений</div>
+                    </div>
+                </div>
+            </div>
+            <!-- #Calaloque end -->
+        </div>
+<!-- #Sidebar end -->
+<!-- #Map -->
+        <div class="map-layout">
+            <div id="map-canvas"></div>
+        </div>
+<!-- #Map end -->
+<!-- #Form -->
+    <div class="modal-layout">
+        <div class="modal">
+            <span class="modal__close"></span>
+            <form action="" name="" class="form">
+
+                <p class="form__title form__title--ok">Спасибо! Ваше обращение будет рассмотрено в ближайшее время</p>
+
+            </form>
+        </div>
+    </div>
+<!-- #Form end -->
+    </body>
+</html>

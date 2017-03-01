@@ -1,0 +1,65 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+}
+
+body {font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, Verdana, sans-serif; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+ol, ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+strong {font-weight: bold;} 
+
+input, textarea {outline: none;}
+
+table {border-collapse: collapse; border-spacing: 0;}
+img {border: 0;}
+
+a {text-decoration: underline;outline: none;}
+a:hover{text-decoration: none;}
+
+
+/* #Clearfix
+-------------------------------------------------- */
+
+.clearfix:after,
+.header:after,
+.footer:after,
+.head-after:after,
+.cataloque-nav:after,
+.cataloque-items:after,
+.cataloque-item .item-info:after,
+.tab-wr .line-tab:after,
+.blog-item .abstract:after,
+.object-tabs .navigation:after,
+.team-item:after,
+.services-item:after{
+    display: block;
+    visibility: hidden;
+    clear: both;
+    overflow: hidden;
+    height: 0;
+    content: "";
+    font-size: 0;
+    line-height: 0;
+}
+
+.clearfix,
+.header,
+.footer,
+.head-after,
+.cataloque-nav,
+.cataloque-items,
+.cataloque-item .item-info,
+.tab-wr .line-tab,
+.blog-item .abstract,
+.object-tabs .navigation,
+.team-item:after,
+.services-item{*zoom: 1;outline:medium none;}

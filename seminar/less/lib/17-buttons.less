@@ -1,0 +1,59 @@
+/* buttons
+-----------------------------------------------------------------------------*/
+.btn{
+    display: block;
+
+    margin: 0 auto;
+    padding: 0;
+
+    border: 1px solid @accentColor;
+    background: none;
+    outline: none;
+
+    font-size: 18px;
+    position: relative;
+
+    &:hover{
+    	.btn-inner:after{
+    		left: 0;
+    	}
+    }
+}
+
+.btn-inner{
+    line-height: 31px;
+
+    position: relative;
+    z-index: 1;
+
+    display: block;
+    overflow: hidden;
+
+    width: 162px;
+    height: 39px;
+    margin: 4px;
+
+    text-align: center;
+
+    border: 3px solid @accentColor;
+
+    .box-sizing();
+    &:after{
+        .after();
+        width: 100%;
+        height: 100%;
+        background: @accentColor;
+        top: 0;
+        left: -162px;
+        z-index: -1;
+        .transition(all ease 0.4s);
+    }
+}
+
+.m-registration .btn{
+    margin-top: 27px;
+}
+
+.mobile .btn{
+    font-size: 14px;
+}

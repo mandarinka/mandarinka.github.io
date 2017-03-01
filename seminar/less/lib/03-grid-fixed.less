@@ -1,0 +1,105 @@
+// Config
+
+// .content - обёртка для колонок
+// .col - общий класс для всех колонок
+// X - число от 1 до 12
+// .col-X - размер колонки
+// Так же можно использовать класс .col-mb-X (он аналогичен .col-X).
+
+// Grid
+
+@columns:       12;
+@gutterWidth:   20px;
+@contentWidth: 	960px;
+
+// Column size
+
+@columnWidth: 	@contentWidth/@columns;
+
+body {
+	min-width: @contentWidth;
+}
+
+// Columns
+
+	.content {
+		width: @contentWidth;
+		.center-block();
+		.clearfix();
+
+		.content {
+			width: auto;
+			margin-left: -@gutterWidth / 2;
+			margin-right: -@gutterWidth / 2;
+		}
+
+	}
+
+	.col {
+		padding-left: @gutterWidth / 2;
+		padding-right: @gutterWidth / 2;
+		min-height: 1px;
+		float: left;
+		.box-sizing();
+	}
+
+	.columns (@index) when (@index > 0) {
+		.col-@{index},
+		.col-mb-@{index} {
+			width: @columnWidth * @index;
+		}
+		.columns(@index - 1);
+	}
+	.columns (0) {}
+	.columns (@columns);
+
+
+	// Offset
+
+
+	.offsets (@index) when (@index > 0) {
+		.offset-@{index} {
+			margin-left: @columnWidth * @index;
+		}
+		.offsets(@index - 1);
+	}
+	.offsets (0) {}
+	.offsets (@columns);
+
+
+	// Pull & Push
+	.pull,
+	.push {
+		position: relative;
+	}
+
+	// Pull
+
+	.pulls (@index) when (@index > 0) {
+		.pull-@{index} {
+			right: @columnWidth * @index;
+		}
+		.pulls(@index - 1);
+	}
+	.pulls (0) {}
+	.pulls (@columns);
+
+
+
+	// // Push
+
+	.pushs (@index) when (@index > 0) {
+		.pull-@{index} {
+			left: @columnWidth * @index;
+		}
+		.pushs(@index - 1);
+	}
+	.pushs (0) {}
+	.pushs (@columns);
+
+
+// Positioning
+
+.center-block {
+	margin: 0 auto;
+}

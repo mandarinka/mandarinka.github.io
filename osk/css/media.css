@@ -1,0 +1,223 @@
+@media screen and (max-width: 979px){
+    .sidebar,.map-layout{
+        position: absolute;
+    }
+}
+@media screen and (max-width: 1249px){
+    .cataloque-wr, .cataloque-row, .cataloque-col{
+        display: block;
+    }
+    .cataloque-col{
+        display: block;
+        width: auto;
+        margin: 0 10px 20px;
+    }
+    .cataloque-col .cataloque-item{
+        float: none;
+    }
+
+    .cataloque-nav .pagination a{
+        font-size: 12px;
+        line-height: 20px;
+        width: 20px;
+        height: 20px;
+    }
+}
+@media screen and (max-width: 1250px){
+    .header .phone{
+        font-size: 22px;
+    }
+    .header .callback span{
+        font-size: 16px;
+
+        padding: 0 15px 0 35px;
+    }
+    .header .callback:after{
+        left: 8px;
+    }
+
+    .logo{
+        width: 29.388%;
+    }
+    .description{
+        font-size: 31px;
+
+        width: 70.612%;
+    }
+
+    .sorting ul li a{
+        font-size: 12px;
+    }
+
+    .cataloque-nav .pagination a{
+        font-size: 14px;
+        line-height: 22px;
+
+        width: 22px;
+        height: 22px;
+    }
+    .cataloque-nav .pagination a.next{
+        margin-left: 3px;
+    }
+    .cataloque-nav .pagination a.prev{
+        margin-right: 3px;
+    }
+
+    .cataloque-nav .navigation{
+        font-size: 12px;
+
+        padding-top: 13px;
+    }
+    .cataloque-nav .navigation a:before{
+        top: -1px;
+    }
+
+    .cataloque-item{
+        width: 98%;
+    }
+
+    .cataloque-item{
+        height: 100%;
+    }
+
+
+    .nearest-objects .arrow-next{
+        right: -20px;
+    }
+    .nearest-objects .arrow-prev{
+        left: -20px;
+    }
+
+    .line-tab .label-city{
+        margin: 0 8px 10px 0;
+    }
+    .line-tab .label-city{
+        padding: 6px 15px 6px 32px;
+    }
+    .line-tab input[type='radio'] + label:before{
+        left: -23px;
+    }
+    .line-tab input[type='radio']:checked + label:after{
+        left: -20px;
+    }
+
+    .line-tab-l.room{
+        width: auto;
+        padding-left: 10px;
+    }
+
+    .line-tab-l span.new-line{
+        display: inline;
+    }
+
+    .sorting .tab-navigation a{
+        font-size: 11px;
+    }
+    .sorting .tab-navigation a.active{
+        box-shadow: none;
+    }
+
+    .line-tab input[type='text']{
+        width: 192px;
+        padding: 10px;
+    }
+
+    .type-house label{
+        display: block;
+
+        width: 75px;
+        margin-right: 20px;
+        margin-bottom: 21px;
+    }
+
+    .line-tab .area-start,
+    .line-tab .price-start{
+        margin-right: 10px;
+    }
+    .line-tab .ui-area-end,
+    .line-tab .ui-area-start,
+    .line-tab .ui-price-end,
+    .line-tab .ui-price-start{
+        margin-left: 5px;
+    }
+    .line-tab .area-start,
+    .line-tab .area-end,
+    .line-tab .price-start,
+    .line-tab .price-end{
+        margin-top: 10px;
+    }
+    .line-tab-r .ui-step{
+        margin-top: 30px;
+        margin-left: -60px;
+    }
+
+    .ui-room.ui-slider-horizontal{
+        margin-bottom: 10px;
+        margin-left: -60px;
+    }
+    .cataloque-items--modified .item-price{
+        width: 100%;
+        max-width: 100%;
+    }
+    .cataloque-items--modified .cataloque-item .item-info .title{
+        padding-right: 0;
+    }
+    .cataloque-items--modified .cataloque-item .item-info .adress{
+        float: left;
+
+        width: 40%;
+        padding-right: 0;
+    }
+    .cataloque-items--modified .cataloque-item .item-info .type{
+        position: relative;
+
+        float: right;
+    }
+    .cataloque-items--modified .item-price{
+        clear: both;
+    }
+    .cataloque-items--modified .cataloque-item .callback:after{
+        width: 107px;
+
+        background-image: url(../images/callback-hover-mini.png);
+    }
+}
+
+@media screen and (min-width: 1251px) and (max-width: 1367px){
+    .cataloque-item .callback:hover:after{
+        font-size: 11px;
+        line-height: 32px;
+    }
+
+    .cataloque-item .title{
+        font-size: 15px;
+        line-height: 17px;
+    }
+
+    .cataloque-item{
+        height: 100%;
+    }
+
+    .line-tab input[type='checkbox'] + label:before{
+        margin: 0 5px 0 0;
+    }
+    .line-tab .type-house label{
+        margin-right: 5px;
+    }
+
+    .cataloque-items--modified .cataloque-item .callback:after{
+        width: 153px;
+
+        background-image: url(../images/callback-hover-s.png);
+    }
+
+    .cataloque-items--modified .cataloque-item .item-info .adress{
+        padding-bottom: 10px;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1605px){
+    .line-tab input[type='checkbox'] + label::before{
+        margin: 0 5px 0 0;
+    }
+}
+

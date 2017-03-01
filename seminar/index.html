@@ -1,0 +1,459 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+<link href="js/bxslider/jquery.bxslider.css" rel="stylesheet">
+<link href="js/fotorama/fotorama.css" rel="stylesheet">
+<link href="js/select2/select2.css" rel="stylesheet">
+<link href="css/template_styles.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+<body class="page-wr">
+<!-- .sidebar -->
+<div class="pseudo-sidebar"></div>
+<!-- /.sidebar -->
+
+<!-- .main -->
+<div class="main">
+    <!-- .header -->
+    <div class="header-wr" id="top">
+        <header class="header">
+            <!-- .container -->
+            <div class="container text-center">
+                <div class="logo"></div>
+                <div class="phone-head">
+                    <a href="tel:+78452467010"><span class="phone-ccode">+7 (8452)</span> 46-70-10</a>
+                </div>
+                
+                <div class="seminar-date">
+                    <span class="seminar-day">2</span> апреля 2015
+                </div>
+                <div class="time">
+                    <span class="time-start time-divider">10 <span class="time-minute">30</span></span>
+                    <span class="time-end">15 <span class="time-minute">00</span></span>
+                </div>
+
+
+                <div class="seminar-description">
+                    <p class="seminar-t">Бесплатный семинар</p>
+                    <h1 class="description js-description">Как навести порядок<br>в рабочем хаосе?</h1>
+                    <p class="description-after js-description-after">12 инструментов современного бизнеса</p>
+                </div>
+                <button type="button" class="btn js-show-form" data-target="#registration"><span class="btn-inner">Регистрация</span></button>
+                <div class="seminar-place">
+                    <p><span class="seminar-place-t">Место проведения:</span> отель &laquo;Богемия&raquo;, конференц зал &laquo;GRAND-HALL&raquo;
+                   г. Саратов ул. Железнодорожная, д. 72
+                    <span class="ico-map js-move-to" data-target="#map-canvas"></span></p>
+                </div> 
+
+                <div class="show-more js-move-to" data-target="#content">Подробнее</div> 
+
+                <!-- .registration -->
+                <div class="registration js-form" id="registration">
+                    <div class="registration-form">
+                        <div class="close-btn js-close-form"></div>
+                        <p class="registration-t">Регистрация участников</p>
+                        <form action="#" name="registration">
+                            <label class="field-wr">
+                                <input tabindex="1" type="text" name="name" class="field js-placeholder">
+                                <span tabindex="-1" class="pseudo-placeholder">ФИО</span>
+                            </label>
+
+                            <div class="row">
+                                <div class="col">
+                                    <label class="field-wr">
+                                        <input tabindex="2" type="text" name="email" class="field js-placeholder">
+                                        <span tabindex="-1" class="pseudo-placeholder">E-mail</span>
+                                    </label>                    
+                                </div>
+                                <div class="col">
+                                    <label class="field-wr">
+                                        <input tabindex="3" type="text" name="phone" class="field js-placeholder">
+                                        <span tabindex="-1" class="pseudo-placeholder">Телефон</span>
+                                    </label>                    
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <label class="field-wr">
+                                        <input tabindex="4" type="text" name="company" class="field js-placeholder">
+                                        <span tabindex="-1" class="pseudo-placeholder">Название компании</span>
+                                    </label>                    
+                                </div>
+                                <div class="col">
+                                    <label class="field-wr">
+                                        <input tabindex="5" type="text" name="position" class="field js-placeholder">
+                                        <span tabindex="-1" class="pseudo-placeholder">Должность</span>
+                                    </label>                    
+                                </div>
+                            </div>
+
+                            <div class="field-wr custom-select">
+								<select class="js-custom-select">
+									<option></option>
+                                    <option value="10">Одноклассница</option>
+                                    <option value="20">Пантелеймон Христорождественский</option>
+                                    <option value="30">другое</option>
+								</select>    
+                            </div>
+                            <button  tabindex="7" type="submit" class="btn"><span class="btn-inner">Подать заявку</span></button>
+                        </form>    
+                    </div>
+                    <section class="contacts row">
+                        <div class="col">
+                            <p class="contacts-h1">Если не получается зарегистрироваться,<br> свяжитесь с нами</p>
+                        </div>
+                        <div class="col phone-col">
+                            <p class="contacts-phone"><a href="tel:">+7 (8452) 46-70-10</a></p>
+                            <p class="contacts-phone"><a href="tel:">+7 927 154-00-55</a></p>
+                            <p class="contacts-phone"><a href="tel:">+7 927 910-80-80</a></p>                    
+                        </div>
+                    </section>
+                </div>
+                <!-- /.registration -->
+            </div>
+            <!-- /.container -->
+        </header>
+    </div>
+    <!-- /.header -->
+
+    <!-- .container -->
+    <div class="container" id="content">
+        <p class="title offset-top">Каждый из нас, вероятно, когда-то:</p>
+        <ul class="list">
+            <li><span class="list-wrap-txt">Снова и снова искал на компьютере в папке «Разобрать» срочный нужный файл</span></li>
+            <li><span class="list-wrap-txt">Бежал через несколько кабинетов и длинный коридор, чтобы сказать что-то срочное коллеге</span></li>
+            <li><span class="list-wrap-txt">По 10 раз напоминал о задаче кому-то и не видел результат</span></li>
+            <li><span class="list-wrap-txt">Набивал ФИО клиента или контрагента в файл Клиенты(1000).doc, и не помнил потом, кто это и зачем звонил</span></li>
+            <li><span class="list-wrap-txt">Рисовал на стене или в таблице графики отпусков или планы проекта</span></li>            
+        </ul>        
+        <p class="some-text text-center">Да, без хорошей организации внутренних процессов любая фирма или человек все равно функционирует. Мучительно, больно, но работает. А зачем страдать?</p>
+    </div>
+    <!-- /.container -->
+
+    <!-- .services -->
+    <div class="services">
+        <p class="title">Мы предлагаем:</p>
+        <ul class="list">
+            <li><span class="list-wrap-txt">Удобное управление задачами и проектами!</span></li>
+            <li><span class="list-wrap-txt">Мощную и полезную в работе CRM!</span></li>
+            <li><span class="list-wrap-txt">Настройку бизнес-процессов компании онлайн!</span></li>
+            <li><span class="list-wrap-txt">Мобильная версия CRM!</span></li>
+            <li><span class="list-wrap-txt">Хранение всех документов компании в едином источнике!</span></li>
+        </ul>
+        <p class="some-bold-text text-center">Битрикс 24 для Вас и повышения эффективности Вашего бизнеса!</p>
+    </div>
+    <!-- /.services -->
+
+
+    <!-- .container -->
+    <div class="container">
+        <!-- .program -->
+        <div class="program">
+            <p class="title">Программа мероприятия</p>
+            <div class="row">
+                <div class="col program-time">
+                <div class="time">
+                    <span class="time-start">10 <span class="time-minute">30</span></span>                
+                </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">Регистрация участников</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col program-time">
+                <div class="time">
+                    <span class="time-start">11 <span class="time-minute">00</span></span>                
+                </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">Приветственное слово</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col program-time">
+                <div class="time">
+                    <span class="time-start">11 <span class="time-minute">05</span></span>                
+                </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">Корпоративный портал: рабочее пространство будущего</p>
+                    <ul class="program-list">
+                        <li>Как корпоративный портал может повысить эффективность компании?</li>
+                        <li>Для чего нужен корпоративный портал?</li>
+                        <li>Бизнес-анализ для решения актуальных задач компании (CRM для увеличения оборота и командная работа для сплочения коллектива)</li>
+                    </ul>
+                    <p class="reporter">Александр Милевский, генеральный директор «Инфо-Эксперт»</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col program-time">
+                <div class="time">
+                    <span class="time-start">11 <span class="time-minute">20</span></span>                
+                </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">12 инструментов для отрыва от конкурентов: повышаем эффективность работы компании</p>
+                    <ul class="program-list">
+                        <li>эффективная CRM для повышения продаж;</li>
+                        <li>бизнес-процессы для оптимизации работы компании;</li>
+                        <li>результативное управление задачами внутри компании для повышения её конкурентоспособности на рынке;</li>
+                        <li>командная работа компании (общее файловое хранилище) для улучшения взаимодействия сотрудников;</li>
+                        <li>прозрачность работы каждого сотрудника;</li>
+                        <li>большой набор функционала, который позволяет решить разный диапазон задач.</li>
+                    </ul>
+                    <p class="reporter">Сергей Востриков, технический директор «Инфо-Эксперт»</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col program-time">
+                <div class="time">
+                    <span class="time-start">12 <span class="time-minute">00</span></span>                
+                </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">Как повысить лояльность клиентов и уровень продаж? CRM – индивидуальный подход к клиенту</p>
+                    <ul class="program-list">
+                        <li>история работы с клиентом – от лида до сделки;</li>
+                        <li>воронка продаж - анализ оборотов компании;</li>
+                        <li>возможность вести всё взаимодействие с клиентом (письма, звонки, счета и т д) из единого источника;</li>
+                        <li>настройки CRM - возможность настроить систему под себя.</li>
+                    </ul>
+                    <p class="reporter">Сергей Востриков, технический директор «Инфо-Эксперт»</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col program-time">
+                <div class="time">
+                    <span class="time-start">12 <span class="time-minute">30</span></span>                
+                </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">Кофе-брейк</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col program-time">
+                <div class="time">
+                    <span class="time-start">13 <span class="time-minute">00</span></span>                
+                </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">Управление проектами: как успеть в срок, не упуская мелочей</p>
+                    <ul class="program-list">
+                        <li>Командная работа над проектами: постановка задач и учёт рабочего времени, возможность помощи коллег в задачах, их совместное обсуждение в виде комментариев;
+                        </li>
+                        <li>Распределение ролей для более эффективного выполнения задач;
+                        </li>
+                        <li>Помощь в анализе проекта: диаграмма Ганта;
+                        </li>
+                        <li>Помощь менеджеру для более продуктивного выполнения задач: чек-лист; напоминания, шаблоны для быстрого создания задач;
+                        </li>
+                        <li>Отчеты как показатели эффективности проектов;
+                        </li>
+                        <li>Бизнес-планирование проектов в конкретных задачах для сотрудников.</li>
+                    </ul>
+                    <p class="reporter">Роман Вдовенко, проект-менеджер «Инфо-Эксперт»</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col program-time">
+                    <div class="time">
+                        <span class="time-start">13 <span class="time-minute">30</span></span>                
+                    </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">История внедрения Битрикс24 в Интернет-магазине «Фиалка-экспресс» (www.fialka-express.ru): повышение конверсии</p>
+                    <p class="reporter">Екатерина Григорьева, директор</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col program-time">
+                    <div class="time">
+                        <span class="time-start">13 <span class="time-minute">50</span></span>                
+                    </div>
+                </div>
+                <div class="col">
+                    <p class="program-t">Вопросы и ответы с экспертами, розыгрыш призов лотереи</p>
+                </div>
+            </div>
+        </div>
+        <!-- /.program -->
+    </div>
+    <!-- /.container -->
+
+    <!-- .audience -->
+    <div class="audience">
+        <div class="audience-title text-center">
+            Аудитория семинара
+        </div>
+        <div class="audience-txt">
+            <ul class="list-simple">
+                <li>руководители компаний среднего и малого бизнеса;</li>
+                <li>ИТ-специалисты;</li>
+                <li>руководители направлений (продажи, электронная коммерция, IT, реклама, маркетинг, HR);</li>
+                <li>а также все желающие, кому интересно повысить личную эффективность и результаты команды в целом.</li>
+            </ul>                
+        </div>
+    </div>
+    <!-- /.audience -->
+
+    <!-- .infographics-item -->
+    <div class="infographics js-infographics">
+        <div class="infographics-bg"></div>
+        <div class="infographics-item first">
+            <span class="infographics-txt-top">Проводим семинары с</span>
+            <span class="infographics-txt">2006</span>
+            <span class="infographics-txt-bott">года</span>  
+        </div>
+        <div class="infographics-item second">
+            <span class="infographics-txt-top">более</span>
+            <span class="infographics-txt">500</span>
+            <span class="infographics-txt-bott">посетителей</span>     
+        </div>
+        <div class="infographics-item last">
+            <span class="infographics-txt-top">более</span>
+            <span class="infographics-txt">50</span>
+            <span class="infographics-txt-bott">спикеров</span>        
+        </div>        
+    </div>
+
+    <!-- /.infographics-item -->    
+
+    <!-- .container -->
+    <div class="container">
+        <!-- .review -->
+        <div class="review-wr">
+            <p class="review-t">Отзывы участников предыдущих семинаров</p>
+            <ul class="js-bx-slider">
+                <li>
+                    <div class="review">
+                        <div class="review-txt">
+                            Самый практический семинар, который прошел в приятной дружеской атмосфере. Всё четко, доступно и нужное! Качественная информация, которую можно использовать в работе. Мероприятие получилось очень насыщенное и полезное
+                        </div>
+
+                        <div class="row">
+                            <div class="col review-photo">
+                                <img src="files/photo.jpg" alt="" class="review-photo-pos">
+                            </div>
+
+                            <div class="col review-author">
+                                <div class="block-table">
+                                    <div class="block-cell">
+                                        <p class="review-author-h1">Пантелеймон Христорождественский
+                                        <span class="review-author-h2">progect-manager ООО &laquo;Коллектив&raquo;</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="review">
+                        <div class="review-txt">
+                            Самый практический семинар, который прошел в приятной дружеской атмосфере. Всё четко, доступно и нужное! Качественная информация, которую можно использовать в работе. Мероприятие получилось очень насыщенное и полезное
+                        </div>
+
+                        <div class="row">
+                            <div class="col review-photo">
+                                <img src="files/photo.jpg" alt="" class="review-photo-pos">
+                            </div>
+
+                            <div class="col review-author">
+                                <div class="block-table">
+                                    <div class="block-cell">
+                                        <p class="review-author-h1">Пантелеймон Христорождественский
+                                        <span class="review-author-h2">progect-manager ООО &laquo;Коллектив&raquo;</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="review">
+                        <div class="review-txt">
+                            Самый практический семинар, который прошел в приятной дружеской атмосфере. Всё четко, доступно и нужное! Качественная информация, которую можно использовать в работе. Мероприятие получилось очень насыщенное и полезное
+                        </div>
+
+                        <div class="row">
+                            <div class="col review-photo">
+                                <img src="files/photo.jpg" alt="" class="review-photo-pos">
+                            </div>
+
+                            <div class="col review-author">
+                                <div class="block-table">
+                                    <div class="block-cell">
+                                        <p class="review-author-h1">Пантелеймон Христорождественский
+                                        <span class="review-author-h2">progect-manager ООО &laquo;Коллектив&raquo;</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- /.review -->  
+
+        <!-- .gallery -->
+        <div class="gallery-wr">
+            <span class="show-gallery js-show-gallery">Посмотреть фото семинаров</span>
+            <div class="gallery">
+                <div class="gallery-item"><img src="files/slider-item2.jpg" alt="" class="js-show-gallery"></div>
+                <div class="hidden-gallery">
+                    <div class="fotorama js-fotorama" data-auto="false">
+                        <img src="files/slider-item.jpg" data-caption="Семинар «Битрикс 24 в управлении проектами»  2 мая 2014 г.">
+                        <img src="files/slider-item.jpg" data-caption="Семинар «Битрикс 24»">
+                        <img src="files/slider-item.jpg" data-caption="Семинар «Битрикс 24 в управлении проектами»">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.gallery --> 
+
+        <div class="move-top-wr">
+            <div class="move-top js-move-to" data-target="#top">Зарегистрироваться</div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- .map -->
+    <div class="map">
+        <div id="map-canvas"></div>
+    </div>
+    <!-- .map -->
+</div>
+<!-- /.main -->
+
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="js/bxslider/jquery.bxslider.min.js"></script>
+<script src="js/fotorama/fotorama.js"></script>
+<script src="js/select2/select2.min.js"></script>
+<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&amp;lang=ru-RU&amp;onload=init" type="text/javascript"></script>
+<!-- только для десктопа -->
+<!-- <script src="js/redirect.js"></script> -->
+<!-- / -->
+<script src="js/main.js"></script>
+<script src="js/lib/ya-map.js"></script>
+</body>
+</html>

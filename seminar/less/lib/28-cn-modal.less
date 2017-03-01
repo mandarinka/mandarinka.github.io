@@ -1,0 +1,63 @@
+.cn-modal {
+	margin: 0 auto;
+	background: #cfcfcf;
+	position: relative;
+	.box-shadow(~"0 0 20px rgba(0,0,0,.8)");
+
+	.input {
+		background: @white;
+		border: 0;
+	}
+
+	&-close,
+	&-close.mfp-close {
+		color: @white;
+		cursor: pointer;
+		margin: 7px 5px 0 0;
+		line-height: 36px;
+		padding: 0;
+		width: 36px;
+		height: 36px;
+		text-align-last: auto;
+		text-indent: -9999px;
+		display: inline-block;
+		background: url('data:image/gif;base64,R0lGODlhFAAUAIABAP///wAAACH5BAEAAAEALAAAAAAUABQAAAIyBIKpG2YM02snyoqmpUwvr4DX5okdxm2XaTmoSrGRC2eoPObzq3+8fYKVfj5gzYY7FQAAOw==') no-repeat 50% 50%;
+
+	} //.cn-modal-close
+
+	&-header {
+		color: @white;
+		background: @grayDark;
+		font-size: 20px;
+		padding: 10px 40px 10px 20px;
+	} //.cn-modal-header
+
+	&-content {
+		padding: 20px;
+	} //.cn-modal-content
+
+	&-footer {
+		padding: 20px;
+	} //.cn-modal-footer
+
+	&-error {
+		margin: -20px -20px 0;
+		padding: 10px 20px;
+		background: @yellow;
+		p {
+			margin: 0;
+			font-weight: bold;
+		}
+		font.errortext {
+			color: inherit !important; // Сбрасываем цвет текста для битриксовых ошибок (к примеру авторизация)
+		}
+	} //.cn-modal-error
+
+	&-errors {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	} //.cn-modal-errors
+
+
+} //.cn-modal

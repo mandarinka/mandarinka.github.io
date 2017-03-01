@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/local/codenails/css/css_app/animate.css">
+    <link rel="stylesheet" href="/local/codenails/css/css_app/template_styles.css">
+</head>
+<!--
+ чтобы показать блок с онбордингом:
+ у боди класс ov-h,
+ #app добален .is-blur,
+ .modal имеет .is-open
+-->
+<body class="ov-h">
+<div id="app" class="app-container is-blur">
+    <div class="body-wrapper clearfix">
+        <!-- /.mobile-menu-container -->
+        <header class="pre-header">
+            <div class="content pre-header-content">
+                <div class="col col-mb-6 col-3">
+                    <div class="crm-shop-logo">
+                        <span class="crm-shop-icon">b24</span>
+                        Shop
+                    </div>
+                </div>
+                <div class="col col-mb-6 col-9">
+
+                    <ul class="top-menu">
+                        <li><a href="#">Перейти на сайт</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- .pre-header -->
+
+        <div class="content mt50 mb50">
+            <div class="col col-mb-12 col-dt-3">
+                <ul class="admin-menu">
+                    <li class="admin-menu-link active js-tab" data-target="#shop-info" data-title="Информация о магазине">Информация
+                        о магазине
+                    </li>
+                    <li class="admin-menu-link js-tab" data-target="#add-product" data-title="Добавить товар">Добавить товар</li>
+                    <li class="admin-menu-link js-tab" data-target="#add-section" data-title="Добавить раздел">Добавить раздел</li>
+                    <li class="admin-menu-link js-tab" data-target="#products-list" data-title="Список товаров">Список товаров</li>
+                    <li class="admin-menu-link js-tab" data-target="#analitycs" data-title="Аналитика"> Аналитика</li>
+                    <li class="admin-menu-link js-tab" data-target="#add-js" data-title="Добавить JS">Добавить JS</li>
+                    <li class="admin-menu-link js-tab" data-target="#shop-style" data-title="Оформление магазина">Оформление магазина</li>
+                    <li class="admin-menu-link js-tab" data-target="#delivery" data-title="Условия доставки">Условия доставки</li>
+                    <li class="admin-menu-link js-tab" data-target="#payment" data-title="Условия оплаты">Условия оплаты</li>
+                    <li class="admin-menu-link js-tab" data-target="#nda" data-title="Условия
+                        конфиденциальности">Условия
+                        конфиденциальности</li>
+                    <li class="admin-menu-link js-tab" data-target="#order" data-title="Оформление заказа">Оформление заказа</li>
+                </ul>
+            </div>
+            <div class="col col-mb-12 col-12 col-dt-9">
+                <div class="breadcrumbs">
+                    <span class="js-tab-title">Информация об интернет магазине</span>
+                </div>
+
+                <div class="admin-tab-container js-admin-tabs">
+                    <div class="admin-tab active" id="shop-info">
+
+                        <div class="form-control">
+                            <label class="input-label">Название интернет-магазина</label>
+                            <input type="text" class="input col-4" placeholder="Введите название интернет-магазина">
+                        </div>
+
+                        <div class="form-control">
+                            <label for="" class="input-label">Выберите поддомен</label>
+                            <div class="subdomain-wrapper">
+                                <div class="subdomain">                                         
+                                    <input type="text" class="input input-subdomain">
+                                    <span class="domain">.crm-shop.ru</span>
+                                </div>
+                                <div class="subdomain-note">
+                                    Поддомен второго уровня вы можете подключить в административной панели
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="input-label">Номер телефона</label>
+                            <input type="phone"  class="input input-phone" placeholder="+7 (___) ___-__-__">
+                        </div>
+
+                        <div class="form-control">
+                            <span class="input-label mb10">Логотип</span>
+                            <input
+                                    id="admin_radio1"
+                                    type="radio"
+                                    class="radio js-toggle-logo"
+                                    name="admin_radio"
+                                    data-target="#admin_text-logo"
+                                    checked
+                            >
+                            <label for="admin_radio1"><span></span>Текстовый логотип</label>
+
+                            <input
+                                    name="admin_radio"
+                                    type="radio"
+                                    id="admin_radio2"
+                                    class="radio js-toggle-logo"
+                                    data-target="#admin_upload-file-contailer"
+                            >
+                            <label for="admin_radio2"><span></span>Изображение</label>
+                        </div>
+
+                        <div id="admin_text-logo" class="upload-container is-visible">
+                            <div class="form-control">
+                                <label class="input-label">Введите текст для логотипа</label>
+                                <input type="text" class="input" placeholder="Введите текст для логотипа">
+                            </div>
+                        </div>
+
+                        <div id="admin_upload-file-contailer" class="admin-upload-file upload-file-contailer upload-container">
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <div class="file-preview" id="admin_upload-logo-preview"></div>
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <div class="upload-file">
+                                    <input
+                                            type="file"
+                                            id="admin_upload-logo"
+                                            class="input-file js-file-upload"
+                                            data-preview="#admin_upload-logo-preview"
+                                            data-field="#admin_upload-logo"
+                                            data-width="500"
+                                            data-height="400"
+                                            data-error="#admin_upload-logo-error"
+                                    >
+                                    <label for="admin_upload-logo">Выбрать файл</label>
+                                    <div class="upload-file-note">
+                                        Максимальный размер изображения: 500px по ширине, 400px по высоте
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-mb-12">
+                                <div class="upload-error-wrapper">
+                                    <div id="admin_upload-logo-error" class="upload-error"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="input-label">Заголовок H1 (заголовок для SEO)</label>
+                            <input type="text" class="input" placeholder="Введите заголовок для SEO">
+                        </div>
+
+                        <div class="form-control">
+                            <label class="input-label">Описание главной страницы (текст для SEO)</label>
+                            <textarea name="" rows="8" class="input" placeholder="Введите описание главной страницы"></textarea>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="input-label">Ключевые слова (для SEO)</label>
+                            <input type="text" class="input col-4" placeholder="Введите ключевые слова">
+                        </div>
+
+                        <div class="form-control">
+                            <label class="input-label">Описание страницы (метатег description)</label>
+                            <input type="text" class="input col-4" placeholder="Введите описание страницы">
+                        </div>
+
+                        <div class="form-control">
+                            <label class="input-label">Описание на странице оформления заказа</label>
+                            <textarea name="" rows="8" class="input" placeholder="Введите описание на странице оформления заказа"></textarea>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="input-label">Валюта</label>
+                            <span class="btn-dashed js-toggle-box" data-target="#currency-box">Редактировать валюты</span>
+                            <div id="currency-box" class="hide">
+                                <div class="buttons-line">
+                                    <div class="buttons-line-item hide js-select-currency">Тенге</div>
+                                    <div class="buttons-line-item active first js-select-currency">Рубль</div>
+                                    <div class="buttons-line-item js-select-currency">Доллар</div>
+                                    <div class="buttons-line-item hide js-select-currency">Франк</div>
+                                    <div class="buttons-line-item js-select-currency">Евро</div>
+                                    <div class="buttons-line-item js-select-currency">Гривна</div>
+                                    <div class="buttons-line-item last js-select-currency">Песо</div>
+                                    <div class="buttons-line-item hide js-select-currency">Драм</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="input-label">Товары</label>
+                            <span class="btn-dashed">Редактировать товары</span>
+                        </div>
+
+                        <div class="sotsialbox-container">
+                            <p class="sotsialbox-title">Добавить ссылки на ваши социальные сети:</p>
+                            <div class="form-control">
+                                <label class="input-label">Группа Вконтакте:</label>
+                                <input type="text" class="input" placeholder="Введите ссылку на группу Вконтакте">
+                            </div>
+
+                            <div class="form-control">
+                                <label class="input-label">Группа Facebook:</label>
+                                <input type="text" class="input" placeholder="Введите ссылку на группу в Facebook">
+                            </div>
+
+                            <div class="form-control">
+                                <label class="input-label">Аккаунт в Twitter:</label>
+                                <input type="text" class="input" placeholder="Введите ссылку на аккаунт в Twitter">
+                            </div>
+
+                            <div class="form-control">
+                                <label class="input-label">Группа в Одноклассниках:</label>
+                                <input type="text" class="input" placeholder="Введите ссылку на группу в Одноклассниках">
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-secondary">Сохранить</button>
+                    </div>
+                    <!--#shop-info-->
+
+                    <div class="admin-tab" id="add-product">
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Название товара:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <input type="text" class="input" placeholder="Введите название товара">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Стоимость товара:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <input type="number" class="input js-input-price" placeholder="Введите стоимость товара">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Валюта:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <div class="buttons-line">
+                                        <div class="buttons-line-item hide js-select-currency">Тенге</div>
+                                        <div class="buttons-line-item active first js-select-currency">Рубль</div>
+                                        <div class="buttons-line-item js-select-currency">Доллар</div>
+                                        <div class="buttons-line-item hide js-select-currency">Франк</div>
+                                        <div class="buttons-line-item js-select-currency">Евро</div>
+                                        <div class="buttons-line-item js-select-currency">Гривна</div>
+                                        <div class="buttons-line-item last js-select-currency">Песо</div>
+                                        <div class="buttons-line-item hide js-select-currency">Драм</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Ставка НДС:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <select name="" class="styler" data-placeholder="[Не выбрана]">
+                                        <option value=""></option>
+                                        <option value="Option">Option</option>
+                                        <option value="Option">Option</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Раздел товара:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <select name="" class="styler" data-placeholder="[Не выбран]">
+                                        <option value=""></option>
+                                        <option value="Option">Option</option>
+                                        <option value="Option">Option</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-multi">Фотографии товара:
+                                        <span>
+                                            Кликните на изображение, чтобы<br>
+                                            выбрать его для аннотации
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <div id="product-photo-container" class="product-photo-container js-select-photo">
+                                        <div class="product-photo-block active">
+                                            <div class="product-photo">
+                                                <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                            </div>
+                                            <div class="product-title">Основное изображение</div>
+                                        </div>
+
+                                        <div class="product-photo-block">
+                                            <div class="product-photo">
+                                                <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                            </div>
+                                            <div class="product-title">Основное изображение</div>
+                                        </div>
+
+                                        <div class="product-photo-block">
+                                            <div class="product-photo">
+                                                <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                            </div>
+                                            <div class="product-title">Основное изображение</div>
+                                        </div>
+
+                                        <div class="product-photo-block">
+                                            <div class="product-photo">
+                                                <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                            </div>
+                                            <div class="product-title">Основное изображение</div>
+                                        </div>
+
+                                        <div class="product-photo-block">
+                                            <div class="product-photo">
+                                                <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                            </div>
+                                            <div class="product-title">Основное изображение</div>
+                                        </div>
+
+                                        <div class="product-photo-block">
+                                            <div class="product-photo">
+                                                <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                            </div>
+                                            <div class="product-title">Основное изображение</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="add-product-photo">
+                                        <input type="file"
+                                               id="add-product-photo"
+                                               class="input-file js-add-photo"
+                                               data-container="#product-photo-container"
+                                               data-input="#add-product-photo"
+                                               data-error="#add-photo-error"
+                                               data-template=".product-photo-block"
+                                               data-width="1920"
+                                               data-height="1000"
+                                        >
+                                        <label for="add-product-photo">Добавить фотографию</label>
+                                        <div class="upload-error-wrapper">
+                                            <div id="add-photo-error" class="upload-error"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Видео:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <input type="text" class="input input-link" placeholder="Вставьте ссылку на YouTube">
+                                    <button type="button" class="btn btn-secondary js-insert-input">Добавить ещё видео</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Характеристики:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8 js-params">
+                                    <div class="content product-param">
+                                        <div class="col col-mb-12 col-4 col-dt-4">
+                                            <label class="input-label-smalltext">Наименование:</label>
+                                            <input type="text" class="input" placeholder="Введите наименование">
+                                        </div>
+                                        <div class="col col-mb-12 col-4 col-dt-4">
+                                            <label class="input-label-smalltext">Значение:</label>
+                                            <input type="text" class="input" placeholder="Введите значение">
+                                        </div>
+                                        <div class="col col-mb-12 col-4 col-dt-4">
+                                            <button type="button" class="btn btn-remove-el js-remove-el"><i class="fa fa-close"></i>Удалить</button>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-secondary js-add-param" type="button">Добавить характеристику</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Описание товара:</label>
+                                    <div class="text-muted">(не обязательно для заполнения)</div>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <textarea name="" class="input" rows="8" placeholder="Введите описание товара"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Сортировка:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <input type="text" class="input js-field-sorting" placeholder="Сортировка">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Партнер:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <input type="text" class="input" placeholder="Партнер">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Помощник:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <input type="text" class="input" placeholder="Помощник">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-line">
+                            <div class="content">
+                                <div class="col col-mb-12 col-4 col-dt-4">
+                                    <label class="input-label-center">Отображение товара:</label>
+                                </div>
+                                <div class="col col-mb-12 col-8 col-dt-8">
+                                    <input type="checkbox" class="checkbox" id="show-on-site">
+                                    <label for="show-on-site">
+                                        <span></span>
+                                        Товар отображается на сайте
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right-btn-container">
+                            <button type="button" class="btn">очистить поля</button>
+                            <button type="button" class="btn btn-secondary">Добавить товар</button>
+                        </div>
+                    </div>
+                    <!--#add-product-->
+
+                    <div class="admin-tab" id="add-section">
+                        <div class="content mb15">
+                            <div class="col col-mb-12 col-3 col-dt-3">
+                                <label class="input-label">
+                                    Наименование:
+                                    <span class="input-label-xs">название категории</span>
+                                </label>
+                            </div>
+                            <div class="col col-mb-12 col-9 col-dt-9">
+                                <input type="text" class="input" placeholder="Введите название">
+                            </div>
+                        </div>
+
+                        <div class="content mb15">
+                            <div class="col col-mb-12 col-3 col-dt-3">
+                                <label class="input-label">
+                                    Сортировка:
+                                </label>
+                            </div>
+                            <div class="col col-mb-12 col-9 col-dt-9">
+                                <input type="text" class="input js-field-sorting" placeholder="Введите число">
+
+                                <div class="wrapper-toggle-buttons">
+                                    <div class="btn-toggle active js-toggle-field" data-state="0">Раздел первого уровня</div>
+                                    <div class="btn-toggle js-toggle-field" data-state="1">Является подразделом</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hide js-subsection-fileds">
+                            <div class="content mb15">
+                                <div class="col col-mb-12 col-3 col-dt-3">
+                                    <label class="input-label">
+                                        Подраздел раздела:
+                                        <span class="input-label-xs">или подраздела</span>
+                                    </label>
+                                </div>
+                                <div class="col col-mb-12 col-9 col-dt-9">
+                                    <select class="styler" name="select-section">
+                                        <option value="Архив Б24">Архив Б24</option>
+                                        <option value="Архив Б24">Архив Б24</option>
+                                        <option value="Архив Б24">Архив Б24</option>
+                                        <option value="Архив Б24">Архив Б24</option>
+                                        <option value="Архив Б24">Архив Б24</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right-btn-container">
+                            <button type="button" class="btn btn-secondary">Сохранить</button>
+                        </div>
+                    </div>
+                    <!--#add-section-->
+
+                    <div class="admin-tab" id="products-list">
+                        <div class="section-container" id="section-1">
+                            <div class="section-panel">
+                                <div class="section-name">
+                                    <span class="section-name-block" id="section-name-1">Название раздела</span>
+                                </div>
+                                <div class="section-sort">
+                                    <label class="input-label-center">Сортировка:</label>
+                                    <input type="text" class="input" readonly value="50">
+                                </div>
+                                <div class="section-control-btn">
+                                    <div class="btn btn-toggle-block js-toggle-block" data-text-btn="Свернуть" data-toggle="#section-elements">
+                                        Развернуть
+                                    </div>
+                                </div>
+                                <div class="section-control-btn">
+                                    <span class="btn-edit js-edit-el" data-modal="#edit-section" data-target="#section-name-1">
+                                        <i class="fa fa-pencil"></i>
+                                        <span class="btn-edit-text">Редактировать</span>
+                                    </span>
+                                </div>
+                                <div class="section-control-btn">
+                                    <span class="btn-delete-section js-delete-el" data-target="#section-1">
+                                        <i class="fa fa-remove"></i>
+                                        <span class="btn-delete-text">Удалить</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="section-toggle-content" id="section-elements">
+                                <div class="section-goods" id="goods-1">
+                                    <div class="goods-img"></div>
+                                    <div class="goods-name">
+                                        Очень длинное название товара, прям жесть
+                                    </div>
+                                    <div class="goods-price">
+                                        <span class="digit">6743</span>
+                                        <span class="currency">руб.</span>
+                                    </div>
+                                    <div class="goods-control-btn">
+                                        <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#goods-1">
+                                            <i class="fa fa-pencil"></i>
+                                            <span class="btn-edit-text">Редактировать</span>
+                                        </span>
+                                    </div>
+                                    <div class="goods-control-btn">
+                                        <span class="btn-delete-section js-delete-el" data-target="#goods-1">
+                                            <i class="fa fa-remove"></i>
+                                            <span class="btn-delete-text">Удалить</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="section-goods" id="goods-2">
+                                    <div class="goods-img"></div>
+                                    <div class="goods-name">
+                                        Очень длинное название товара, прям жесть
+                                    </div>
+                                    <div class="goods-price">
+                                        <span class="digit">6743</span>
+                                        <span class="currency">руб.</span>
+                                    </div>
+                                    <div class="goods-control-btn">
+                                        <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#goods-2">
+                                            <i class="fa fa-pencil"></i>
+                                            <span class="btn-edit-text">Редактировать</span>
+                                        </span>
+                                    </div>
+                                    <div class="goods-control-btn">
+                                        <span class="btn-delete-section js-delete-el" data-target="#goods-2">
+                                            <i class="fa fa-remove"></i>
+                                            <span class="btn-delete-text">Удалить</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="subsection-container" id="section-2">
+                                    <div class="section-panel">
+                                        <div class="section-name">
+                                            <span class="section-name-block">Название раздела</span>
+                                            <input id="section-name-2" type="text" class="input hide js-enter-title" placeholder="Введите название раздела">
+                                        </div>
+                                        <div class="section-control-btn">
+                                            <div class="btn btn-toggle-block js-toggle-block" data-text-btn="Свернуть" data-toggle="#section-elements-2">
+                                                Развернуть
+                                            </div>
+                                        </div>
+                                        <div class="section-control-btn">
+                                            <span class="btn-edit js-edit-el" data-modal="#edit-section" data-target="#section-name-2">
+                                                <i class="fa fa-pencil"></i>
+                                                <span class="btn-edit-text">Редактировать</span>
+                                            </span>
+                                        </div>
+                                        <div class="section-control-btn">
+                                            <span class="btn-delete-section js-delete-el" data-target="#section-2">
+                                                <i class="fa fa-remove"></i>
+                                                <span class="btn-delete-text">Удалить</span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-toggle-content" id="section-elements-3">
+                                        <div class="section-goods" id="goods-3">
+                                            <div class="goods-img"></div>
+                                            <div class="goods-name">
+                                                Очень длинное название товара, прям жесть
+                                            </div>
+                                            <div class="goods-price">
+                                                <span class="digit">6743</span>
+                                                <span class="currency">руб.</span>
+                                            </div>
+                                            <div class="goods-control-btn">
+                                                <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#goods-3">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <span class="btn-edit-text">Редактировать</span>
+                                                </span>
+                                            </div>
+                                            <div class="goods-control-btn">
+                                                <span class="btn-delete-section js-delete-el" data-target="#goods-3">
+                                                    <i class="fa fa-remove"></i>
+                                                    <span class="btn-delete-text">Удалить</span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="section-goods" id="goods-4">
+                                            <div class="goods-img"></div>
+                                            <div class="goods-name">
+                                                Очень длинное название товара, прям жесть
+                                            </div>
+                                            <div class="goods-price">
+                                                <span class="digit">6743</span>
+                                                <span class="currency">руб.</span>
+                                            </div>
+                                            <div class="goods-control-btn">
+                                                <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#goods-4">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <span class="btn-edit-text">Редактировать</span>
+                                                </span>
+                                            </div>
+                                            <div class="goods-control-btn">
+                                                <span class="btn-delete-section js-delete-el" data-target="#goods-4">
+                                                    <i class="fa fa-remove"></i>
+                                                    <span class="btn-delete-section">Удалить</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="subsection-offset" id="section-4">
+                                        <div class="section-panel">
+                                            <div class="section-name">
+                                                <span class="section-name-block">Название раздела</span>
+                                                <input id="section-name-4" type="text" class="input hide js-enter-title" placeholder="Введите название раздела">
+                                            </div>
+                                            <div class="section-control-btn">
+                                                <div class="btn btn-toggle-block js-toggle-block" data-text-btn="Свернуть" data-toggle="#section-elements-4">
+                                                    Развернуть
+                                                </div>
+                                            </div>
+                                            <div class="section-control-btn">
+                                                <span class="btn-edit js-edit-el" data-modal="#edit-section" data-target="#section-name-4">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <span class="btn-edit-text">Редактировать</span>
+                                                </span>
+                                            </div>
+                                            <div class="section-control-btn">
+                                                <span class="btn-delete-section js-delete-el" data-target="#section-4">
+                                                    <i class="fa fa-remove"></i>
+                                                    <span class="btn-delete-text">Удалить</span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="section-toggle-content" id="section-elements-4">
+                                            <div class="section-goods" id="goods-5">
+                                                <div class="goods-img"></div>
+                                                <div class="goods-name">
+                                                    Очень длинное название товара, прям жесть
+                                                </div>
+                                                <div class="goods-price">
+                                                    <span class="digit">6743</span>
+                                                    <span class="currency">руб.</span>
+                                                </div>
+                                                <div class="goods-control-btn">
+                                                <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#goods-5">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <span class="btn-edit-text">Редактировать</span>
+                                                </span>
+                                                </div>
+                                                <div class="goods-control-btn">
+                                                <span class="btn-delete-section js-delete-el" data-target="#goods-5">
+                                                    <i class="fa fa-remove"></i>
+                                                    <span class="btn-delete-text">Удалить</span>
+                                                </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="section-goods" id="goods-6">
+                                                <div class="goods-img"></div>
+                                                <div class="goods-name">
+                                                    Очень длинное название товара, прям жесть
+                                                </div>
+                                                <div class="goods-price">
+                                                    <span class="digit">6743</span>
+                                                    <span class="currency">руб.</span>
+                                                </div>
+                                                <div class="goods-control-btn">
+                                                <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#goods-6">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <span class="btn-edit-text">Редактировать</span>
+                                                </span>
+                                                </div>
+                                                <div class="goods-control-btn">
+                                                <span class="btn-delete-section js-delete-el" data-target="#goods-6">
+                                                    <i class="fa fa-remove"></i>
+                                                    <span class="btn-delete-section">Удалить</span>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--.subsection-container-->
+                            </div>
+                        </div>
+
+                        <div class="section-container" id="new-section-1">
+                            <div class="section-panel">
+                                <div class="section-name">
+                                    <span class="section-name-block" id="new-section-name-1">Невероятно длинное название раздела </span>
+                                </div>
+                                <div class="section-sort">
+                                    <label class="input-label-center">Сортировка:</label>
+                                    <input type="text" class="input" readonly value="40">
+                                </div>
+                                <div class="section-control-btn">
+                                    <div class="btn btn-toggle-block js-toggle-block" data-text-btn="Свернуть" data-toggle="#new-section-elements">
+                                        Развернуть
+                                    </div>
+                                </div>
+                                <div class="section-control-btn">
+                                    <span class="btn-edit js-edit-el" data-modal="#edit-section" data-target="#new-section-name-1">
+                                        <i class="fa fa-pencil"></i>
+                                        <span class="btn-edit-text">Редактировать</span>
+                                    </span>
+                                </div>
+                                <div class="section-control-btn">
+                                    <span class="btn-delete-section js-delete-el" data-target="#new-section-1">
+                                        <i class="fa fa-remove"></i>
+                                        <span class="btn-delete-text">Удалить</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="section-toggle-content" id="new-section-elements">
+                                <div class="section-goods" id="new-goods-1">
+                                    <div class="goods-img"></div>
+                                    <div class="goods-name">
+                                        Очень длинное название товара, прям жесть
+                                    </div>
+                                    <div class="goods-price">
+                                        <span class="digit">6743</span>
+                                        <span class="currency">руб.</span>
+                                    </div>
+                                    <div class="goods-control-btn">
+                                        <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#new-goods-1">
+                                            <i class="fa fa-pencil"></i>
+                                            <span class="btn-edit-text">Редактировать</span>
+                                        </span>
+                                    </div>
+                                    <div class="goods-control-btn">
+                                        <span class="btn-delete-section js-delete-el" data-target="#new-goods-1">
+                                            <i class="fa fa-remove"></i>
+                                            <span class="btn-delete-text">Удалить</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="section-goods" id="new-goods-2">
+                                    <div class="goods-img"></div>
+                                    <div class="goods-name">
+                                        Очень длинное название товара, прям жесть
+                                    </div>
+                                    <div class="goods-price">
+                                        <span class="digit">6743</span>
+                                        <span class="currency">руб.</span>
+                                    </div>
+                                    <div class="goods-control-btn">
+                                        <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#new-goods-2">
+                                            <i class="fa fa-pencil"></i>
+                                            <span class="btn-edit-text">Редактировать</span>
+                                        </span>
+                                    </div>
+                                    <div class="goods-control-btn">
+                                        <span class="btn-delete-section js-delete-el" data-target="#new-goods-2">
+                                            <i class="fa fa-remove"></i>
+                                            <span class="btn-delete-text">Удалить</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="subsection-container" id="new-section-2">
+                                    <div class="section-panel">
+                                        <div class="section-name">
+                                            <span class="section-name-block" id="new-section-name-2">Название раздела</span>
+                                        </div>
+                                        <div class="section-sort">
+                                            <label class="input-label-center">Сортировка:</label>
+                                            <input type="text" class="input" readonly value="8">
+                                        </div>
+                                        <div class="section-control-btn">
+                                            <div class="btn btn-toggle-block js-toggle-block" data-text-btn="Свернуть" data-toggle="#new-section-elements-2">
+                                                Развернуть
+                                            </div>
+                                        </div>
+                                        <div class="section-control-btn">
+                                            <span class="btn-edit js-edit-el" data-modal="#edit-section" data-target="#new-section-name-2">
+                                                <i class="fa fa-pencil"></i>
+                                                <span class="btn-edit-text">Переименовать</span>
+                                            </span>
+                                        </div>
+                                        <div class="section-control-btn">
+                                            <span class="btn-delete-section js-delete-el" data-target="#new-section-2">
+                                                <i class="fa fa-remove"></i>
+                                                <span class="btn-delete-text">Удалить</span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-toggle-content" id="new-section-elements-2">
+                                        <div class="section-goods" id="new-goods-3">
+                                            <div class="goods-img"></div>
+                                            <div class="goods-name">
+                                                Очень длинное название товара, прям жесть
+                                            </div>
+                                            <div class="goods-price">
+                                                <span class="digit">6743</span>
+                                                <span class="currency">руб.</span>
+                                            </div>
+                                            <div class="goods-control-btn">
+                                                <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#new-goods-3">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <span class="btn-edit-text">Редактировать</span>
+                                                </span>
+                                            </div>
+                                            <div class="goods-control-btn">
+                                                <span class="btn-delete-section js-delete-el" data-target="#new-goods-3">
+                                                    <i class="fa fa-remove"></i>
+                                                    <span class="btn-delete-text">Удалить</span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="section-goods" id="new-goods-4">
+                                            <div class="goods-img"></div>
+                                            <div class="goods-name">
+                                                Очень длинное название товара, прям жесть
+                                            </div>
+                                            <div class="goods-price">
+                                                <span class="digit">6743</span>
+                                                <span class="currency">руб.</span>
+                                            </div>
+                                            <div class="goods-control-btn">
+                                                <span class="btn-edit js-edit-el" data-modal="#edit-goods" data-target="#new-goods-4">
+                                                    <i class="fa fa-pencil"></i>
+                                                    <span class="btn-edit-text">Редактировать</span>
+                                                </span>
+                                            </div>
+                                            <div class="goods-control-btn">
+                                                <span class="btn-delete-section js-delete-el" data-target="#new-goods-4">
+                                                    <i class="fa fa-remove"></i>
+                                                    <span class="btn-delete-section">Удалить</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--.subsection-container-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--#products-list-->
+
+                    <div class="admin-tab" id="analitycs">
+                        <div class="content analitycs-form-control">
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <span class="vertical-center-block pb10">Идентификатор «Яндекс.Метрика»</span>
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <input type="text" name="ya-metrix" class="input" placeholder="Введите индкнтификатор">
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <button class="btn btn-secondary" type="button">Добавить</button>
+                            </div>
+                        </div>
+
+                        <div class="content analitycs-form-control">
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <span class="vertical-center-block pb10">Идентификатор «Google Analytics»</span>
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <input type="text" name="google-analytics" class="input" placeholder="Введите индкнтификатор">
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <button class="btn btn-secondary" type="button">Добавить</button>
+                            </div>
+                        </div>
+
+                        <div class="analitycs-param">
+                            <div class="content analitycs-param-item">
+                                <div class="col col-mb-12 col-5 col-dt-5">
+                                    Открытие формы обратного звонка
+                                </div>
+                                <div class="col col-mb-12 col-6 col-dt-6">
+                                    <span class="analitycs-param-ccode">CALL_OPEN</span>
+                                    <i class="fa fa-cog js-toggle-modal" data-target="#analytics-settings"></i>
+                                </div>
+                            </div>
+                            <div class="content analitycs-param-item">
+                                <div class="col col-mb-12 col-5 col-dt-5">
+                                    Успешная отправка формы обратного звонка
+                                </div>
+                                <div class="col col-mb-12 col-6 col-dt-6">
+                                    <span class="analitycs-param-ccode">CALL_SUCCESS</span>
+                                    <i class="fa fa-cog js-toggle-modal" data-target="#analytics-settings"></i>
+                                </div>
+                            </div>
+                            <div class="content analitycs-param-item">
+                                <div class="col col-mb-12 col-5 col-dt-5">
+                                    Просмотр детальной страницы
+                                </div>
+                                <div class="col col-mb-12 col-6 col-dt-6">
+                                    <span class="analitycs-param-ccode">DETAIL_VIEW</span>
+                                    <i class="fa fa-cog js-toggle-modal" data-target="#analytics-settings"></i>
+                                </div>
+                            </div>
+                            <div class="content analitycs-param-item">
+                                <div class="col col-mb-12 col-5 col-dt-5">
+                                    Добавление товара в корзину
+                                </div>
+                                <div class="col col-mb-12 col-6 col-dt-6">
+                                    <span class="analitycs-param-ccode">ADD_BASKET</span>
+                                    <i class="fa fa-cog js-toggle-modal" data-target="#analytics-settings"></i>
+                                </div>
+                            </div>
+                            <div class="content analitycs-param-item">
+                                <div class="col col-mb-12 col-5 col-dt-5">
+                                    Переход на страницу оформления заказа
+                                </div>
+                                <div class="col col-mb-12 col-6 col-dt-6">
+                                    <span class="analitycs-param-ccode">ORDER_OPEN</span>
+                                    <i class="fa fa-cog js-toggle-modal" data-target="#analytics-settings"></i>
+                                </div>
+                            </div>
+                            <div class="content analitycs-param-item">
+                                <div class="col col-mb-12 col-5 col-dt-5">
+                                    Успешное оформление заказа
+                                </div>
+                                <div class="col col-mb-12 col-6 col-dt-6">
+                                    <span class="analitycs-param-ccode">ORDER_SUCCESS</span>
+                                    <i class="fa fa-cog js-toggle-modal" data-target="#analytics-settings"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--#analitycs-->
+
+                    <div class="admin-tab" id="add-js">
+                        <p class="mt0 mb20">Добавить Java Script</p>
+                        <div class="form-control">
+                            <input id="js-type1" type="radio" name="js-type" class="radio" checked>
+                            <label for="js-type1">
+                                <span></span>
+                                На все страницы сайта
+                            </label>
+
+                            <input id="js-type2" type="radio" name="js-type" class="radio">
+                            <label for="js-type2">
+                                <span></span>
+                                Только на следующие страницы:
+                                <div class="pages-block js-select-page">
+                                    <span class="pages-block-item active">Главная</span>
+                                    <span class="pages-block-item">Раздел каталога</span>
+                                    <span class="pages-block-item">Детальная страница товара</span>
+                                    <span class="pages-block-item">Корзина</span>
+                                </div>
+                            </label>
+
+                            <div class="visual-editor-container">
+                                <textarea name="code-editor" cols="30" rows="10" class="input" placeholder="Введите код Java Script"></textarea>
+                            </div>
+                            <div class="right-btn-container">
+                                <button type="button" class="btn btn-secondary">Сохранить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--#add-js-->
+
+                    <div class="admin-tab" id="shop-style">
+                        <p class="mt0 mb20">Выберите тему оформления:</p>
+                        <div class="themes-container">
+                            <div class="theme">
+                                <input id="theme-radio1" name="theme-radio" type="radio" class="radio" checked>
+                                <label for="theme-radio1">
+                                    <div class="theme-preview"></div>
+                                    <span></span>
+                                    Солнце
+                                </label>
+                            </div>
+
+                            <div class="theme">
+                                <input id="theme-radio2" name="theme-radio" type="radio" class="radio">
+                                <label for="theme-radio2">
+                                    <div class="theme-preview"></div>
+                                    <span></span>
+                                    Луна
+                                </label>
+                            </div>
+
+                            <div class="theme">
+                                <input id="theme-radio3" name="theme-radio" type="radio" class="radio">
+                                <label for="theme-radio3">
+                                    <div class="theme-preview"></div>
+                                    <span></span>
+                                    Уран
+                                </label>
+                            </div>
+
+                            <div class="theme">
+                                <input id="theme-radio4" name="theme-radio" type="radio" class="radio">
+                                <label for="theme-radio4">
+                                    <div class="theme-preview"></div>
+                                    <span></span>
+                                    Меркурий
+                                </label>
+                            </div>
+
+                            <div class="theme">
+                                <input id="theme-radio5" name="theme-radio" type="radio" class="radio">
+                                <label for="theme-radio5">
+                                    <div class="theme-preview"></div>
+                                    <span></span>
+                                    Нептун
+                                </label>
+                            </div>
+
+                            <div class="theme">
+                                <input id="theme-radio6" name="theme-radio" type="radio" class="radio">
+                                <label for="theme-radio6">
+                                    <div class="theme-preview"></div>
+                                    <span></span>
+                                    Марс
+                                </label>
+                            </div>
+                        </div>
+
+                        <p class="upload-theme-note">
+                            Вы можете загрузить картинку, которая будет установлена
+                            фоном для публичной страницы с формой
+                        </p>
+                        <div id="admin_upload-theme-container" class="admin-upload-file upload-file-contailer">
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <div class="file-preview" id="admin_upload-theme-preview"></div>
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <div class="upload-file">
+                                    <input
+                                            type="file"
+                                            id="admin_upload-theme"
+                                            class="input-file js-file-upload"
+                                            data-preview="#admin_upload-theme-preview"
+                                            data-field="#admin_upload-theme"
+                                            data-width="1920"
+                                            data-height="900"
+                                            data-error="#admin_upload-theme-error"
+                                    >
+                                    <label for="admin_upload-theme">Загрузить</label>
+                                    <div class="upload-file-note">
+                                        Максимальный размер изображения: 1920px по ширине, 900px по высоте
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="upload-error-wrapper">
+                            <div id="admin_upload-theme-error" class="upload-error"></div>
+                        </div>
+
+                        <div class="top-divider">
+                            <div class="content mb20">
+                                <div class="col col-mb-5 col-3 col-dt-3">
+                                    <label class="input-label-center">Стандартный CSS</label>
+                                </div>
+                                <div class="col col-mb-7 col-9 col-dt-9">
+                                    <button class="btn btn-default" type="button">Скачать</button>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="col col-mb-12 col-3 col-dt-3">
+                                    <label class="input-label-center">Свой CSS</label>
+                                </div>
+                                <div class="col col-mb-12 col-9 col-dt-9">
+                                    <div class="upload-css-wrapper">
+
+                                        <input type="checkbox" class="checkbox" name="custom-css" id="custom-css">
+                                        <label for="custom-css" class="input-label-center js-toggle-btn" data-target="#upload-css">
+                                            <span></span>
+                                            Использовать свои стили CSS
+                                        </label>
+                                        <div id="upload-css" class="upload-css-container hide">
+                                            <div class="upload-file pt0 ta-left">
+                                                <input
+                                                        id="admin_upload-css"
+                                                        type="file"
+                                                        class="input-file js-upload-css"
+                                                        data-input="#admin_upload-css"
+                                                        data-name="#downloaded-css-name"
+                                                        data-error="#admin_upload-css-error"
+                                                >
+                                                <label for="admin_upload-css">Загрузить свой css</label>
+                                            </div>
+                                            <span id="downloaded-css-name" class="downloaded-css-name"></span>
+                                        </div>
+                                    </div>
+                                    <div class="upload-error-wrapper">
+                                        <div id="admin_upload-css-error" class="upload-error"></div>
+                                    </div>
+                                    <div class="css-recommendations">
+                                        <span class="btn-dashed js-toggle-modal" data-target="#rules-for-css">Рекомендации по использованию своего файла CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-secondary mt40" type="button">Сохранить</button>
+                    </div>
+                    <!--#shop-style-->
+
+                    <div class="admin-tab" id="delivery">
+                        <div class="visual-editor-container">
+                            Панель визуального редактора
+                        </div>
+                        <div class="right-btn-container">
+                            <button type="button" class="btn btn-secondary">Сохранить</button>
+                        </div>
+                    </div>
+                    <!--#delivery-->
+
+                    <div class="admin-tab" id="payment">
+                        <div class="visual-editor-container">
+                            Панель визуального редактора
+                        </div>
+                        <div class="right-btn-container">
+                            <button type="button" class="btn btn-secondary">Сохранить</button>
+                        </div>
+                    </div>
+                    <!--#payment-->
+
+                    <div class="admin-tab" id="nda">
+                        <div class="visual-editor-container">
+                            Панель визуального редактора
+                        </div>
+                        <div class="right-btn-container">
+                            <button type="button" class="btn btn-secondary">Сохранить</button>
+                        </div>
+                    </div>
+                    <!--#nda-->
+
+                    <div class="admin-tab" id="order">
+                        <div class="visual-editor-container">
+                            Панель визуального редактора
+                        </div>
+                        <div class="right-btn-container">
+                            <button type="button" class="btn btn-secondary">Сохранить</button>
+                        </div>
+                    </div>
+                    <!--#order-->
+                </div>
+                <!-- /.admin-tabs -->
+            </div>
+        </div>
+    </div>
+    <!-- .body-wrapper clearfix -->
+    <footer class="footer">
+        <div class="content">
+            <div class="col col-mb-12 col-4 col-dt-6">
+                <div class="copyright">
+                    &copy; 2016
+                    <div class="info-expert">
+                        <a href="http://www.info-expert.ru/" target="_blank">ООО &quot;Инфо-Эксперт&quot;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-mb-12 col-8 col-dt-6">
+                <div class="footer-links">
+                    <div class="footer-phone">
+                        <a href="tel:88452659063">+7 (8452) 65-90-63</a> ,
+                        <a href="tel:88452467010" class="ml10">+7 (8452) 46-70-10</a>
+                    </div>
+                    <div class="social-buttons">
+                        <a class="social-btn" href="#" target="_blank"><i class="fa fa-vk"></i></a>
+                        <a class="social-btn" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a class="social-btn" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- .footer-wrapper -->
+</div>
+<!--#app app-container is-blur-->
+
+<div class="modal" id="edit-section">
+    <div class="modal-content modal-content-xl">
+        <div class="btn-close js-close-modal">&times;</div>
+        <div class="modal-content-inner shadow-box">
+            <p class="modal-h1">Редактирование раздела</p>
+
+            <div class="content mb15">
+                <div class="col col-mb-12 col-3 col-dt-3">
+                    <label class="input-label">
+                        Наименование:
+                        <span class="input-label-xs">название категории</span>
+                    </label>
+                </div>
+                <div class="col col-mb-12 col-9 col-dt-9">
+                    <input type="text" class="input" placeholder="Введите название">
+                </div>
+            </div>
+
+            <div class="content mb15">
+                <div class="col col-mb-12 col-3 col-dt-3">
+                    <label class="input-label">
+                        Сортировка:
+                    </label>
+                </div>
+                <div class="col col-mb-12 col-9 col-dt-9">
+                    <input type="text" class="input js-field-sorting" placeholder="Введите число">
+
+                    <div class="wrapper-toggle-buttons">
+                        <div class="btn-toggle active js-toggle-field" data-state="0">Раздел первого уровня</div>
+                        <div class="btn-toggle js-toggle-field" data-state="1">Является подразделом</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hide js-subsection-fileds">
+                <div class="content">
+                    <div class="col col-mb-12 col-3 col-dt-3">
+                        <label class="input-label">
+                            Подраздел раздела:
+                            <span class="input-label-xs">или подраздела</span>
+                        </label>
+                    </div>
+                    <div class="col col-mb-12 col-9 col-dt-9">
+                        <select class="styler" name="select-section">
+                            <option value="Архив Б24">Архив Б24</option>
+                            <option value="Архив Б24">Архив Б24</option>
+                            <option value="Архив Б24">Архив Б24</option>
+                            <option value="Архив Б24">Архив Б24</option>
+                            <option value="Архив Б24">Архив Б24</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-btn-container">
+                <button type="button" class="btn btn-secondary">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="edit-goods">
+    <div class="modal-content modal-content-xl">
+        <div class="btn-close js-close-modal">&times;</div>
+        <div class="modal-content-inner shadow-box">
+            <p class="modal-h1">Редактирование товара</p>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Название товара:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <input type="text" class="input" placeholder="Введите название товара">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Стоимость товара:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <input type="number" class="input js-input-price" placeholder="Введите стоимость товара">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Валюта:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <div class="buttons-line">
+                            <div class="buttons-line-item hide js-select-currency">Тенге</div>
+                            <div class="buttons-line-item active first js-select-currency">Рубль</div>
+                            <div class="buttons-line-item js-select-currency">Доллар</div>
+                            <div class="buttons-line-item hide js-select-currency">Франк</div>
+                            <div class="buttons-line-item js-select-currency">Евро</div>
+                            <div class="buttons-line-item js-select-currency">Гривна</div>
+                            <div class="buttons-line-item last js-select-currency">Песо</div>
+                            <div class="buttons-line-item hide js-select-currency">Драм</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Ставка НДС:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <select name="" class="styler" data-placeholder="[Не выбрана]">
+                            <option value=""></option>
+                            <option value="Option">Option</option>
+                            <option value="Option">Option</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Раздел товара:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <select name="" class="styler" data-placeholder="[Не выбран]">
+                            <option value=""></option>
+                            <option value="Option">Option</option>
+                            <option value="Option">Option</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-multi">Фотографии товара:
+                            <span>
+                                            Кликните на изображение, чтобы<br>
+                                            выбрать его для аннотации
+                                        </span>
+                        </label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <div id="product-photo-container-m" class="product-photo-container js-select-photo">
+                            <div class="product-photo-block active">
+                                <div class="product-photo">
+                                    <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                </div>
+                                <div class="product-title">Основное изображение</div>
+                            </div>
+
+                            <div class="product-photo-block">
+                                <div class="product-photo">
+                                    <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                </div>
+                                <div class="product-title">Основное изображение</div>
+                            </div>
+
+                            <div class="product-photo-block">
+                                <div class="product-photo">
+                                    <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                </div>
+                                <div class="product-title">Основное изображение</div>
+                            </div>
+
+                            <div class="product-photo-block">
+                                <div class="product-photo">
+                                    <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                </div>
+                                <div class="product-title">Основное изображение</div>
+                            </div>
+
+                            <div class="product-photo-block">
+                                <div class="product-photo">
+                                    <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                </div>
+                                <div class="product-title">Основное изображение</div>
+                            </div>
+
+                            <div class="product-photo-block">
+                                <div class="product-photo">
+                                    <img src="/local/codenails/images/tmp/temp-small.png" alt="">
+                                </div>
+                                <div class="product-title">Основное изображение</div>
+                            </div>
+                        </div>
+
+                        <div class="add-product-photo">
+                            <input type="file"
+                                   id="add-product-photo-m"
+                                   class="input-file js-add-photo"
+                                   data-container="#product-photo-container-m"
+                                   data-input="#add-product-photo-m"
+                                   data-error="#add-photo-error-m"
+                                   data-template=".product-photo-block"
+                                   data-width="1920"
+                                   data-height="1000"
+                            >
+                            <label for="add-product-photo-m">Добавить фотографию</label>
+                            <div class="upload-error-wrapper">
+                                <div id="add-photo-error-m" class="upload-error"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Видео:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <input type="text" class="input input-link" placeholder="Вставьте ссылку на YouTube">
+                        <button type="button" class="btn btn-secondary js-insert-input">Добавить ещё видео</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Характеристики:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8 js-params">
+                        <div class="content product-param">
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <label class="input-label-smalltext">Наименование:</label>
+                                <input type="text" class="input" placeholder="Введите наименование">
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <label class="input-label-smalltext">Значение:</label>
+                                <input type="text" class="input" placeholder="Введите значение">
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <button type="button" class="btn btn-remove-el js-remove-el"><i class="fa fa-close"></i>Удалить</button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-secondary js-add-param" type="button">Добавить характеристику</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Описание товара:</label>
+                        <div class="text-muted">(не обязательно для заполнения)</div>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <textarea name="" id="" class="input" rows="8" placeholder="Введите текст описания"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Сортировка:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <input type="text" class="input js-field-sorting" placeholder="Введите сортировку">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Партнер:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <input type="text" class="input" placeholder="Партнер">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Помощник:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <input type="text" class="input" placeholder="Помощник">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-line">
+                <div class="content">
+                    <div class="col col-mb-12 col-4 col-dt-4">
+                        <label class="input-label-center">Отображение товара:</label>
+                    </div>
+                    <div class="col col-mb-12 col-8 col-dt-8">
+                        <input type="checkbox" class="checkbox" id="show-on-site-2">
+                        <label for="show-on-site-2">
+                            <span></span>
+                            Товар отображается на сайте
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-btn-container">
+                <button class="btn js-cancel-changes" data-target="" type="button">Отмена</button>
+                <button class="btn btn-secondary js-save-changes" data-target="" type="button">Применить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="analytics-settings">
+    <div class="modal-content modal-content-xs">
+        <div class="btn-close js-close-modal">&times;</div>
+        <div class="modal-content-inner shadow-box">
+            <p class="modal-h1">Настройка цели</p>
+            <p class="modal-h2"><span>Яндекс.Метрика</span></p>
+            <div class="modal-form-control">
+                <div class="col-mb-12 col-3 col-dt-3">
+                    <label class="vertical-center-block">ID счетчика:</label>
+                </div>
+                <div class="col-mb-12 col-9 col-dt-9 ">
+                    <input name="counter-id" type="text" class="input" placeholder="Введите ID счетчика">
+                </div>
+            </div>
+            <p class="modal-h2"><span>Google Analytics</span></p>
+            <div class="modal-form-control">
+                <div class="col-mb-12 col-3 col-dt-3">
+                    <label class="vertical-center-block">Категория:</label>
+                </div>
+                <div class="col-mb-12 col-9 col-dt-9">
+                    <input name="category" type="text" class="input" placeholder="Введите категорию">
+                </div>
+            </div>
+            <div class="modal-form-control">
+                <div class="col-mb-12 col-3 col-dt-3">
+                    <label class="vertical-center-block">Тип действия:</label>
+                </div>
+                <div class="col-mb-12 col-9 col-dt-9">
+                    <input name="action-type" type="text" class="input" placeholder="Введите тип действия">
+                </div>
+            </div>
+            <div class="modal-form-control">
+                <div class="col-mb-12 col-3 col-dt-3">
+                    <label class="vertical-center-block">Лейбл:</label>
+                </div>
+                <div class="col-mb-12 col-9 col-dt-9">
+                    <input name="label" type="text" class="input" placeholder="Введите лейбл">
+                </div>
+            </div>
+            <div class="modal-form-control">
+                <div class="col-mb-12 col-3 col-dt-3">
+                    <label class="vertical-center-block">Значение:</label>
+                </div>
+                <div class="col-mb-12 col-9 col-dt-9">
+                    <input name="label-value" type="text" class="input" placeholder="Введите значение">
+                </div>
+            </div>
+            <div class="buttons-center">
+                <button class="btn" type="button">Отмена</button>
+                <button class="btn btn-secondary" type="button">Применить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="rules-for-css">
+    <div class="modal-content modal-content-xs">
+        <div class="btn-close js-close-modal">&times;</div>
+        <div class="modal-content-inner shadow-box">
+            <p class="modal-h1">Рекомендации по использованию своего файла CSS</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque aut commodi cum dolore
+                doloremque enim eos, itaque maiores minima molestias, nulla odio porro quia rerum similique tempore, ut
+                vitae.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque aut commodi cum dolore
+                doloremque enim eos, itaque maiores minima molestias, nulla odio porro quia rerum similique tempore, ut
+                vitae.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque aut commodi cum dolore
+                doloremque enim eos, itaque maiores minima molestias, nulla odio porro quia rerum similique tempore, ut
+                vitae.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque aut commodi cum dolore
+                doloremque enim eos, itaque maiores minima molestias, nulla odio porro quia rerum similique tempore, ut
+                vitae.</p>
+        </div>
+    </div>
+</div>
+
+<div class="modal is-open">
+    <div class="modal-content is-onboarding">
+        <div class="center-container shadow-box">
+            <div class="onboarding-container">
+                <div class="onboarding-slider js-slider">
+                    <div class="onboarding-slide">
+                        <div class="onboarding-slide-content">
+                            <p>Иллюстрация и текст</p>
+                        </div>
+                    </div>
+                    <div class="onboarding-slide">
+                        <div class="onboarding-slide-content">
+                            <p>Иллюстрация и текст Иллюстрация и текст Иллюстрация и текст</p>
+                        </div>
+                    </div>
+                    <div class="onboarding-slide">
+                        <div class="onboarding-slide-content">
+                            <p>Иллюстрация и текст</p>
+                        </div>
+                    </div>
+                    <div class="onboarding-slide">
+                        <div class="onboarding-slide-content">
+                            <p>Иллюстрация и текст</p>
+                        </div>
+                    </div>
+                </div>
+                <!--.onboarding-slider js-slider -->
+                <div class="onboarding-buttons">
+                    <button type="button" class="btn btn-primary js-skip-step">Пропустить</button>
+                    <button type="button" class="btn btn-secondary js-next-slide">Далее</button>
+                </div>
+                <!--.onboarding-buttons js-slider-btns -->
+                <div class="onboarding-dots js-slider-dots"></div>
+            </div>
+            <!-- .onboarding-container -->
+
+            <div class="settings-master">
+                <div class="btn-close js-close-master">&times;</div>
+                <div class="settings-master-body">
+                    <div class="step step-1 active" data-next-step="#step-2" data-btn-text="Завершить настройку">
+                        <p class="settings-master-h1">Настройте информацию о магазине</p>
+                        <div class="form-control">
+                            <label for="" class="input-label">Название интернет-магазина</label>
+                            <input type="text" class="input" placeholder="Введите название интернет-магазина">
+                        </div>
+
+                        <div class="form-control">
+                            <label for="" class="input-label">Выберите поддомен</label>
+                            <div class="subdomain-wrapper">
+                                <div class="subdomain">                                         
+                                    <input type="text" class="input input-subdomain">
+                                    <span class="domain">.crm-shop.ru</span>
+                                </div>
+                                <div class="subdomain-note">
+                                    Поддомен второго уровня вы можете подключить в административной панели
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="" class="input-label">Номер телефона</label>
+                            <input type="phone"  class="input input-phone" placeholder="+7 (___) ___-__-__">
+                        </div>
+
+                        <div class="form-control">
+                            <span class="input-label mb10">Логотип</span>
+                            <input
+                                    id="radio1"
+                                    type="radio"
+                                    class="radio js-toggle-logo"
+                                    name="radio"
+                                    data-target="#text-logo"
+                                    checked
+                            >
+                            <label for="radio1"><span></span>Текстовый логотип</label>
+
+                            <input
+                                    name="radio"
+                                    type="radio"
+                                    id="radio2"
+                                    class="radio js-toggle-logo"
+                                    data-target="#upload-file-contailer"
+                            >
+                            <label for="radio2"><span></span>Изображение</label>
+                        </div>
+
+                        <div id="text-logo" class="upload-container is-visible">
+                            <div class="form-control">
+                                <label class="input-label">Введите текст для логотипа</label>
+                                <input type="text" class="input" placeholder="Введите текст для логотипа">
+                            </div>
+                        </div>
+
+                        <div id="upload-file-contailer" class="content upload-file-contailer upload-container">
+                            <div class="col col-mb-12 col-6 col-dt-6">
+                                <div class="file-preview" id="upload-logo-preview"></div>
+                            </div>
+                            <div class="col col-mb-12 col-6 col-dt-6">
+                                <div class="upload-file">
+                                    <input
+                                            type="file"
+                                            id="upload-logo"
+                                            class="input-file js-file-upload"
+                                            data-preview="#upload-logo-preview"
+                                            data-field="#upload-logo"
+                                            data-width="500"
+                                            data-height="400"
+                                            data-error="#upload-logo-error"
+                                    >
+                                    <label for="upload-logo">Выбрать файл</label>
+                                    <div class="upload-file-note">
+                                        Максимальный размер изображения: 500px по ширине, 400px по высоте
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-mb-12">
+                                <div class="upload-error-wrapper">
+                                    <div id="upload-logo-error" class="upload-error"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-control">
+                            <span class="input-label">Валюта</span>
+                            <div class="buttons-line">
+                                <div class="buttons-line-item hide js-select-currency">Тенге</div>
+                                <div class="buttons-line-item active first js-select-currency">Рубль</div>
+                                <div class="buttons-line-item js-select-currency">Доллар</div>
+                                <div class="buttons-line-item hide js-select-currency">Франк</div>
+                                <div class="buttons-line-item js-select-currency">Евро</div>
+                                <div class="buttons-line-item js-select-currency">Гривна</div>
+                                <div class="buttons-line-item last js-select-currency">Песо</div>
+                                <div class="buttons-line-item hide js-select-currency">Драм</div>
+                            </div>
+                        </div>
+                    </div> <!-- .step step-1 active -->
+
+                    <div id="step-2" class="step step-2" data-next-step="#step-3" data-btn-text="Настроить все" data-btn-text-close="Закрыть окно">
+                        <p class="settings-master-h1">Настройте внешний вид</p>
+                        <div class="content">
+                            <div class="col col-mb-12 col-8 col-dt-8">
+                                <span class="input-label">Выберите тему оформления:</span>
+                                <div class="content">
+                                    <div class="theme-data">
+                                        <input type="radio" class="radio" name="theme" id="theme1" checked>
+                                        <label for="theme1">
+                                            <div class="theme-data-preview"></div>
+                                            <span></span> Светлый
+                                        </label>
+                                    </div>
+                                    <div class="theme-data">
+                                        <input type="radio" class="radio" name="theme" id="theme2">
+                                        <label for="theme2">
+                                            <div class="theme-data-preview"></div>
+                                            <span></span> Тёмный
+                                        </label>
+                                    </div>
+                                    <div class="theme-data">
+                                        <input type="radio" class="radio" name="theme" id="theme3">
+                                        <label for="theme3">
+                                            <div class="theme-data-preview"></div>
+                                            <span></span> Фиолетовый
+                                        </label>
+                                    </div>
+                                    <div class="theme-data">
+                                        <input type="radio" class="radio" name="theme" id="theme4">
+                                        <label for="theme4">
+                                            <div class="theme-data-preview"></div>
+                                            <span></span> Светлый
+                                        </label>
+                                    </div>
+                                    <div class="theme-data">
+                                        <input type="radio" class="radio" name="theme" id="theme5">
+                                        <label for="theme5">
+                                            <div class="theme-data-preview"></div>
+                                            <span></span> Светлый
+                                        </label>
+                                    </div>
+                                    <div class="theme-data">
+                                        <input type="radio" class="radio" name="theme" id="theme6">
+                                        <label for="theme6">
+                                            <div class="theme-data-preview"></div>
+                                            <span></span> Светлый
+                                        </label>
+                                    </div>
+                                </div> <!-- .content -->
+                            </div>
+                            <div class="col col-mb-12 col-4 col-dt-4">
+                                <span class="input-label">Фоновое изображение:</span>
+                                <div class="form-control check-bg">
+                                    <input
+                                            type="checkbox"
+                                            id="check-bg"
+                                            class="checkbox js-toggle-upload-bg"
+                                            data-upload-block="#upload-bg-container"
+                                            checked
+                                    >
+                                    <label for="check-bg">
+                                        <span></span> Загрузить свое фоновое изображение
+                                    </label>
+                                </div>
+                                <div id="upload-bg-container" class="upload-container is-visible">
+                                    <p class="input-label">Вы можете загрузить картинку, которая будет установлена фотоном для публичной страницы с формой</p>
+                                    <div id="upload-bg-preview" class="file-preview-bg"></div>
+                                    <div class="upload-file mb20">
+                                        <input
+                                                type="file"
+                                                id="upload-bg"
+                                                class="input-file js-file-upload"
+                                                data-preview="#upload-bg-preview"
+                                                data-field="#upload-bg"
+                                                data-width="1920"
+                                                data-height="1000"
+                                                data-error="#upload-bg-error"
+                                        >
+                                        <label for="upload-bg">Загрузить</label>
+                                    </div>
+                                    <div class="upload-error-wrapper">
+                                        <div id="upload-bg-error" class="upload-error"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- .content -->
+                    </div> <!-- .step step-2 -->
+
+                    <div id="step-3" class="step step-3">
+                        <div class="thanks-mess-container">
+                            <p class="thanks-mess">Спасибо за настройку</p>
+                            <p class="thanks-mess">Остальные настройки вы можете заполнить в <a href="#" target="_blank">админ. панели</a></p>
+                        </div>
+                    </div> <!-- .step step-3 -->
+                </div> <!-- .settings-master-body -->
+                <div class="settings-master-footer">
+                    <button type="button" class="btn js-close-master">Настроить позже</button>
+                    <button type="button" class="btn btn-secondary js-next-step">Настроить вид</button>
+                </div> <!-- .settings-master-footer -->
+            </div>
+            <!-- .settings-master -->
+        </div>
+        <!--.center-container -->
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="/local/codenails/js/js_app/jquery.maskedinput.min.js"></script>
+<script src="/local/codenails/js/js_app/slick.min.js"></script>
+<script src="/local/codenails/js/js_app/jquery.formstyler.min.js"></script>
+<script src="/local/codenails/js/js_app/main.js"></script>
+</body>
+</html>

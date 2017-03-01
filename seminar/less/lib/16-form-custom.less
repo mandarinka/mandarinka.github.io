@@ -1,0 +1,100 @@
+/* form custom
+-----------------------------------------------------------------------------*/
+
+.field {
+	display: block;
+	width: 100%;
+	height: 39px;
+	padding: 8px 8px 6px 8px;
+	position: relative;
+	font-size: 14px;
+	color: @white;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	outline: none;
+	background: none;
+	-webkit-appearance: none;
+
+	.box-sizing();
+
+	&:focus {
+		outline: none;
+		border-color: @accentColor;
+	}
+	textarea& {
+		height: auto;
+		border: solid 1px @gray;
+		background: @white;
+		&:focus {
+			background: @white;
+			border-color: @gray1;
+		}
+	}
+
+	select& {
+		padding: 0;
+		-webkit-appearance: menulist;
+	} 
+
+	&[type="number"],
+	&[type="date"] {
+		padding: 0 0 0 8px; // убираем отступы у этих типов полей иначе будет некрасиво.
+	}
+
+	&-required,
+	&[required] {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI5JREFUeNpi/P//PwM1ARMDlcGogaMGkgEYdysrEK3Y5c59klzoC8T7gPgzFIPYPuR6uQWINwGxIxDzQDGIvRkqR5KBIFdU41FTDXU90QYWEaGukBQDTYhQZ0LtZMNIioFniFB3mhQD+4lQ10+KgaCk0YpHTStUDUlhWAPE/kC8H4i/QjGI7QeVIxoABBgA0UkaIFtFpqkAAAAASUVORK5CYII=');
+		background-size: 10px 10px;
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+	} //.input-required
+}
+
+.mobile .field{
+	height: 30px;
+}
+
+.field-wr{
+	position: relative;
+	display: block;
+	margin-bottom: @baseLineHeight / 2;
+	z-index: 1;
+}
+
+.pseudo-placeholder{
+	position: absolute;
+	bottom: 6px;
+	left: 8px;
+	color: @white;
+	display: inline-block;
+	z-index: -1;
+	&:after{
+		position: relative;
+		content: "*";
+		display: inline-block;
+		color: @accentColor;
+		padding-left: 3px;
+	}
+}
+
+.field:focus + .pseudo-placeholder{
+	display: none;
+}
+
+.field option[disabled]{
+	 color: #c2c2c2;
+}
+.select-star{
+	position: relative;
+}
+.select-star:after{
+	content: "*";
+	display: none;
+	position: absolute;
+	color: @accentColor;
+	top: 4px;
+	left: 214px;
+}
+.select-star.show-star:after{
+	display: inline-block;
+}

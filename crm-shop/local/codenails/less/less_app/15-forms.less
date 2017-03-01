@@ -1,0 +1,368 @@
+/* ==========================================================================
+   FORMS */
+/* ========================================================================== */
+
+	.input {
+		display: inline-block;
+		height: @inputHeight;
+		padding: 0 10px;
+		position: relative;
+		margin-bottom: @baseLineHeight / 2;
+		color: @textDark;
+		vertical-align: middle;
+		border: solid 1px @inputBorder;
+		outline: none;
+		background-color: @white;
+		-webkit-appearance: none;
+		border-radius: 2px;
+		letter-spacing: normal;
+		// .box-shadow(~"inset 0 2px 1px rgba(0,0,0,.05)");
+		.box-sizing;
+		.transition;
+
+		&:focus {
+			outline: none;
+			border-color: @primary;
+			background-color: @white;
+			// color: @primary;
+		} // .input:focus
+
+		textarea& {
+			padding: 10px;
+			height: auto;
+		} // textarea.input
+
+		select& {
+			padding: 0;
+			cursor: pointer;
+			border-radius: 5px;
+			-webkit-appearance: menulist;
+
+			&[multiple],
+			&.multiple {
+				-webkit-appearance: none;
+				height: auto;
+			} // select.input[multiple], select.input.multiple
+			
+		} // select.input
+
+		// &[type="file"] {
+		// 	padding: 7px;
+		// } //.input[type="file"]
+
+		&[type="number"],
+		&[type="date"],
+		&[type="time"] {
+			padding: 0 0 0 10px; // убираем отступы у этих типов полей иначе будет некрасиво.
+			// border-radius: 2px;
+		} //.input[type="number"], .input[type="date"], .input[type="time"]
+
+		&[type="color"] {
+			padding: 0;
+		} //.input[type="color"]
+
+		&-required,
+		&[required] {
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAI5JREFUeNpi/P//PwM1ARMDlcGogaMGkgEYdysrEK3Y5c59klzoC8T7gPgzFIPYPuR6uQWINwGxIxDzQDGIvRkqR5KBIFdU41FTDXU90QYWEaGukBQDTYhQZ0LtZMNIioFniFB3mhQD+4lQ10+KgaCk0YpHTStUDUlhWAPE/kC8H4i/QjGI7QeVIxoABBgA0UkaIFtFpqkAAAAASUVORK5CYII=');
+			background-size: 10px 10px;
+			background-repeat: no-repeat;
+			background-position: 100% 0;
+		} //.input-required
+		
+		&.disabled,
+		&-disabled,
+		&:disabled {
+			opacity: .5;
+			&:hover {
+				background-color: @white;
+				color: @textDark;
+			}
+		} // .disabled, .input-disabled, [disabled]
+
+		&-block {
+			width: 100%;
+		} //.input-block
+
+		&-phone {
+			border: 0;
+			padding-left: 0;
+
+			&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+				color: @textColor;
+			}
+			&::-moz-placeholder { /* Firefox 19+ */
+				color: @textColor;
+			}
+			&:-ms-input-placeholder { /* IE 10+ */
+				color: @textColor;
+			}
+			&:-moz-placeholder { /* Firefox 18- */
+				color: @textColor;
+			}
+		} //.input-phone
+
+		&:not(.input-phone)::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: @placeholderText;
+		}
+		&:not(.input-phone)::-moz-placeholder { /* Firefox 19+ */
+		  color: @placeholderText;
+		}
+		&:not(.input-phone):-ms-input-placeholder { /* IE 10+ */
+		  color: @placeholderText;
+		}
+		&:not(.input-phone):-moz-placeholder { /* Firefox 18- */
+		  color: @placeholderText;
+		}
+
+	} //.input
+	
+
+	
+	.checkbox {
+		position: absolute;
+		left: -9999px;
+
+		+ label {
+			cursor: pointer;
+			margin-top: 4px;
+			display: inline-block;
+			.user-select;
+
+			> span {
+				display: inline-block;
+				width: 14px;
+				height: 14px;
+				margin: -2px 10px 0 0;
+				vertical-align: middle;
+				background:  @white;
+				cursor: pointer;
+				border: solid 1px @inputBorder;
+				border-radius: 2px;
+				position: relative;
+				// .box-shadow(~"inset 0 1px 2px rgba(0,0,0,.1)");
+			}
+			&:hover {
+				> span {
+					border-color: @inputBorder;
+				}
+			}
+		}
+
+
+		&:checked + label > span {
+			border-color: @inputBorder;
+
+			&:before {
+				content: ' ';
+				position: absolute;
+				border: solid @textColor;
+				border-width: 0 0 2px 2px;
+				height: 4px;
+				width: 9px;
+				left: 2px;
+				top: 3px;
+				.rotate;
+			}
+		}
+		// &:focus + label > span {
+		// 	border-color: @textColor;
+		// }
+		&:focus + label {
+			color: @textColor;
+		}
+		&:checked:disabled + label > span,
+		&:checked:disabled + label:hover > span {
+			border-color: @textDark;
+			background-color: lighten(@textDark, 20%);
+			cursor: default;
+			&:before {
+				border-color: @textDark;
+			}
+		}
+
+		&:disabled + label > span,
+		&:disabled + label > span:hover,
+		&:disabled + label:hover > span {
+			border-color: @textDark;
+			background-color: lighten(@textDark, 10%);
+			cursor: default;
+			&:before {
+				border-color: @textDark;
+			}
+		}
+
+		&:disabled + label,
+		&:disabled + label:hover {
+			color: @textDark;
+			cursor: default;
+		}
+
+	}
+
+	.radio {
+		position: absolute;
+		left: -9999px;
+
+		+ label {
+			cursor: pointer;
+			// margin-top: 4px;
+			display: block;
+			margin-bottom: 20px;
+
+			> span {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				margin: -2px 5px 0 0;
+				vertical-align: middle;
+				background:  @white;
+				cursor: pointer;
+				border: solid 1px @textColor;
+				position: relative;
+				.border-radius(10px);
+				// .box-shadow(~"inset 0 1px 2px rgba(0,0,0,.1)");
+			}
+			&:hover,
+			&:focus {
+				> span {
+					border-color: @textColor;
+				}
+			}
+		}
+
+		&:checked + label > span {
+			&:before {
+				content: ' ';
+				position: absolute;
+				height: 6px;
+				width: 6px;
+				background: @textColor;
+				left: 3px;
+				top: 3px;
+				.border-radius(15px);
+			}
+		}
+		&:focus + label > span {
+			border-color: @textColor;
+		}
+		&:focus + label {
+			color: @textColor;
+		}
+		&:checked:disabled + label > span,
+		&:checked:disabled + label:hover > span {
+			cursor: default;
+			&:before {
+				background: @textDark;
+			}
+		}
+
+		&:disabled + label > span,
+		&:disabled + label > span:hover,
+		&:disabled + label:hover > span {
+			border-color: @textDark;
+			background-color: lighten(@textDark, 10%);
+			cursor: default;
+			&:before {
+				background: @textDark;
+			}
+		}
+
+		&:disabled + label,
+		&:disabled + label:hover {
+			color: @textDark;
+			cursor: default;
+		}
+	}
+
+
+.bx-auth-reg {
+	.alert {
+		p {
+			margin: 0 !important;
+		}
+	}
+}
+
+.form-control {
+	margin-bottom: 35px;
+	.input {
+		margin-bottom: 0;
+	}
+}
+.analitycs-form-control {
+	margin-bottom: 25px;
+}
+.form-label {
+	@media (min-width: @screenTablet) {
+		text-align: right;
+	}
+	display: inline-block;
+	vertical-align: middle;
+	.box-sizing;
+}
+
+.input-label {
+	display: block;
+	margin: 0;
+	padding: 0 0 10px;
+}
+
+.input-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;	
+}
+
+.input-file + label {
+	display: inline-block;
+	color: @btnColor;
+	margin-bottom: 0; // For input.btn
+	// font: 400 12px/@inputHeight @opensans;
+	font-weight: 700;
+	font-family: @opensans;
+	font-size: 12px;
+	line-height: @inputHeight;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	background: #eef2f4;
+	border: 1px solid #eef2f4;
+	text-decoration: none;
+	white-space: nowrap;
+	height: @inputHeight;
+	padding: 0 20px;
+	border-radius: 2px;
+	.user-select();
+	.transition;
+	.box-sizing;
+
+	&:focus {
+		.tab-focus();
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+		background: darken(#eef2f4, 10%);
+		border-color: darken(#eef2f4, 10%);
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		outline: 0;
+		background: darken(#eef2f4, 10%);;
+		border-color: darken(#eef2f4, 10%);;
+	}
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}

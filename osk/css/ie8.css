@@ -1,0 +1,15 @@
+.line-tab input[type='checkbox'],
+.line-tab input[type='radio']{
+    display: inline-block;
+}
+.line-tab .label-city{
+    padding-left: 5px;
+}
+.type-house label{
+    margin-right: 0;
+    padding-left: 0;
+}
+
+.line-tab input[type='text']:focus{
+    border: 2px solid #fce1dd;
+}

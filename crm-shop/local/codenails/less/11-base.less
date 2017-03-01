@@ -1,0 +1,246 @@
+/* ==========================================================================
+	BASE SITE STYLES */
+/* ========================================================================== */
+
+// Прижимем footer к низу окна браузера
+// Структура html должна быть такой:
+// 	<body>
+// 		<div class="body-wrapper clearfix"></div>
+// 		<div class="footer-wrapper"></div>
+// 	</body>
+
+html{
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+
+	.flex-display;
+	.flex-direction(column);
+	
+}
+
+.body-wrapper {
+	background-color: @bodyWrapperColor;
+	.flex(~"1 0 auto");
+}
+.footer-wrapper {
+	
+}
+// Прижимем footer к низу окна браузера
+
+
+	html,
+	button,
+	input,
+	select,
+	textarea {
+		color: @textColorNew;
+	}
+
+	body {
+		font-size: @baseFontSize;
+		line-height: @baseLineHeight;
+		font-family: @baseFontFamily;
+		color: @textColorNew;
+		background: @bodyColor;
+		min-width: 320px;
+	}
+
+	::-moz-selection {
+		background: @selectionColor;
+		color: @white;
+		text-shadow: none;
+		.text-shadow();
+	}
+
+	::selection {
+		background: @selectionColor;
+		color: @white;
+		text-shadow: none;
+		.text-shadow();
+	}
+
+	hr {
+		display: block;
+		height: 1px;
+		border: 0;
+		// border-top: 1px solid @gray;
+		background: rgba(0,0,0,.2);
+		margin: 1em 0;
+		padding: 0;
+	}
+
+	img {
+		vertical-align: middle;
+		max-width: 100%;
+		.bxedtaskbarset & {
+			max-width: none;
+		}
+		.bx-yandex-view-map & {
+			max-width: inherit;
+		}
+	}
+
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	textarea {
+		resize: vertical;
+		line-height: @baseLineHeight;
+	}
+
+	a,
+	.pseudolink { //pseudolink - класс для псевдо-ссылок
+		color: @linkColor;
+		text-decoration: none;
+		
+		&:hover, 
+		&:focus, 
+		&.active {
+			//color: @linkHoverColor;
+			color: darken(@linkColor, 10%);
+			text-decoration: underline;
+		}
+	}
+	// Оформление псевдоссылок
+	*[data-target-self],
+	*[data-target-blank],
+	.pseudolink {
+		cursor: pointer;
+	}
+
+	h1, .h1 {
+		margin: 0 0 1em 0;
+		font: 700 24px/1.5 @baseFontFamily;
+	}
+	h2, .h2 {
+		margin: 1em 0 .5em;
+	}
+	h3, .h3,
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		margin: 1em 0;
+	}
+
+
+	h2, .h2 {
+		font: normal 24px/30px @baseFontFamily;
+	}
+	h3, .h3 {
+		font: bold 20px/26px @baseFontFamily;
+	}
+	h4, .h4 {
+		font: bold 18px/22px @baseFontFamily;
+	}
+	h5, .h5 {
+		font: bold 16px/20px @baseFontFamily;
+	}
+	h6, .h6 {
+		font: bold 14px/18px @baseFontFamily;
+	}
+
+	@media (max-width: @screenTablet) {
+		h1, .h1 {
+			margin: 0 0 .5em 0;
+			line-height: 1.2;
+		}
+	}
+	.placeholder(@placeholderText);
+
+
+	blockquote {
+		background: fadeout(@additional, 80%);
+		border-left: 2px solid @additional;
+		margin: 1.5em 10px;
+		padding: 1em 10px;
+		quotes: "\201C""\201D""\2018""\2019";
+		position: relative;
+		
+		cite {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+			color: @secondary; 
+		}
+		
+		&:before,
+		&:after {
+			color: @additional;
+			content: open-quote;
+			font-size: 4em;
+			line-height: 0.1em;
+			margin-right: 0.25em;
+			vertical-align: -0.4em;
+			position: absolute;
+		}
+		&:after {
+			content: close-quote;
+			bottom: -15px;
+			right: -10px;
+			position: absolute;
+		}
+	}
+
+
+
+/* ==========================================================================
+   CODE */
+/* ========================================================================== */
+	
+	code,
+	kbd,
+	pre,
+	samp {
+		font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	}
+	code {
+		padding: 2px 4px;
+		font-size: 90%;
+		color: #c7254e;
+		background-color: #f9f2f4;
+		border-radius: 4px;
+	}
+	kbd {
+		padding: 2px 4px;
+		font-size: 90%;
+		color: #ffffff;
+		background-color: #333333;
+		border-radius: 3px;
+		-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+		box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+	}
+	kbd kbd {
+		padding: 0;
+		font-size: 100%;
+		font-weight: bold;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	pre code {
+		padding: 0;
+		line-height: 1.4;
+		color: inherit;
+		white-space: pre-wrap;
+		background-color: transparent;
+		border-radius: 0;
+		&,
+		&.hljs {
+			font-size: 12px;
+
+			@media (min-width: @screenPhoneMax) and (max-width: @screenTabletMax) {
+				font-size: 14px;
+			}
+			@media (min-width: @screenDesktop) {
+				font-size: 16px;
+			}
+		}
+		
+	}	

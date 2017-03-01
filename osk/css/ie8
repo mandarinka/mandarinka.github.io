@@ -1,0 +1,4 @@
+.line-tab input[type="checkbox"],
+.line-tab input[type="radio"]{
+    
+}

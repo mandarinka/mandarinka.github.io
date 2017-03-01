@@ -1,0 +1,43 @@
+<svg id="_404.svg" data-name="404.svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 639 411">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        font-size: 300px;
+        font-family: "PT Sans";
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #2fc8f8;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <text id="_4_1" data-name="4_1" class="cls-1" x="-5" y="319.5">4</text>
+  <g id="_0" data-name="0">
+    <path id="полукруг" class="cls-2" d="M322,44a170,170,0,0,0,0,340C322.088,384,322.088,44,322,44Z" transform="translate(-2)"/>
+    <g id="кубы">
+      <path id="blue" class="cls-2" d="M322,25h38V63H322V25Zm16,37h38v38H338V62Zm-17,62h38v38H321V124Zm39-24h38v38H360V100Zm46-27h38v38H406V73Zm15,35h38v38H421V108Zm49-54h38V92H470V54ZM376,162h38v38H376V162Zm45,14h38v38H421V176Zm33-38h38v38H454V138Zm-65,33h38v38H389V171Zm-52,38h38v38H337V209Zm10,38h38v38H347V247Zm47,19h38v38H394V266Zm20-38h38v38H414V228Zm-25,54h38v38H389V282Zm48,26h38v38H437V308Zm-5,16h38v38H432V324Zm-30,49h38v38H402V373Zm-68-47h38v38H334V326Zm45-3h38v38H379V323Zm72-42h38v38H451V281Zm-123-8h38v38H328V273Zm42-75h38v38H370V198Zm-71-65h38v38H299V133Zm50,155h38v38H349V288Zm-40,66h38v38H309V354Zm99-227h38v38H408V127ZM372,0h38V38H372V0Zm74,191h38v38H446V191Zm-59-85h38v38H387V106Z" transform="translate(-2)"/>
+      <rect id="white" class="cls-3" x="301" y="203" width="38" height="38"/>
+    </g>
+    <text id="_0-2" data-name="0" class="cls-4" x="234" y="319.5">0</text>
+  </g>
+  <g id="_4_2" data-name="4_2">
+    <text id="_4_2-2" data-name="4_2" class="cls-1" x="473" y="319.5">4</text>
+    <g id="кубы-2" data-name="кубы">
+      <rect id="white-2" data-name="white" class="cls-3" x="542" y="165" width="38" height="38"/>
+      <rect id="white-3" data-name="white" class="cls-3" x="490" y="245" width="38" height="38"/>
+      <rect id="white-4" data-name="white" class="cls-3" x="559" y="259" width="38" height="38"/>
+      <rect id="white-5" data-name="white" class="cls-3" x="580" y="210" width="38" height="38"/>
+      <rect id="white-6" data-name="white" class="cls-3" x="548" y="99" width="38" height="38"/>
+      <path id="blue-2" data-name="blue" class="cls-2" d="M534,84h38v38H534V84Zm-22,58h38v38H512V142Zm89,61h38v38H601V203ZM496,254h38v38H496V254Zm54,19h38v38H550V273Z" transform="translate(-2)"/>
+    </g>
+  </g>
+</svg>
