@@ -1910,6 +1910,9 @@ select.field {
     width: 44.85294117647059%;
     background-image: url(../images/1360/header-bg.jpg);
   }
+  .registration {
+    width: 44.85294117647059%;
+  }
   .main {
     margin-right: 44.85294117647059%;
   }
@@ -2037,5 +2040,15 @@ select.field {
   .registration-t {
     font-size: 24px;
     margin-bottom: 20px;
+  }
+}
+
+.header {
+  min-height: 100vh;
+}
+
+@media screen and (max-height: 675px) {
+  .registration-form + .contacts {
+    display: none;
   }
 }
