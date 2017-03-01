@@ -1,10 +1,10 @@
 /**
  *  Slider Kit Counter, v1.0 (packed) - 2011/09/23
- *  http://www.kyrielles.net/sliderkit
+ *  https://www.kyrielles.net/sliderkit
  *  
  *  Copyright (c) 2010-2012 Alan Frog
  *  Licensed under the GNU General Public License
- *  See <license.txt> or <http://www.gnu.org/licenses/>
+ *  See <license.txt> or <https://www.gnu.org/licenses/>
  *  
  *  Requires : jQuery Slider Kit v1.7.1+
  * 

@@ -2,10 +2,10 @@
 * @fileOverview TouchSwipe - jQuery Plugin
 * @version 1.6.3
 *
-* @author Matt Bryson http://www.github.com/mattbryson
+* @author Matt Bryson https://www.github.com/mattbryson
 * @see https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
-* @see http://labs.skinkers.com/touchSwipe/
-* @see http://plugins.jquery.com/project/touchSwipe
+* @see https://labs.skinkers.com/touchSwipe/
+* @see https://plugins.jquery.com/project/touchSwipe
 *
 * Copyright (c) 2010 Matt Bryson
 * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -21,7 +21,7 @@
 *					- changed handler signatures so one handler can be used for multiple events
 * $Date: 2011-23-02 (Wed, 23 Feb 2011) $
 * $version: 1.2.0 	- added click handler. This is fired if the user simply clicks and does not swipe. The event object and click target are passed to handler.
-*					- If you use the http://code.google.com/p/jquery-ui-for-ipad-and-iphone/ plugin, you can also assign jQuery mouse events to children of a touchSwipe object.
+*					- If you use the https://code.google.com/p/jquery-ui-for-ipad-and-iphone/ plugin, you can also assign jQuery mouse events to children of a touchSwipe object.
 * $version: 1.2.1 	- removed console log!
 *
 * $version: 1.2.2 	- Fixed bug where scope was not preserved in callback methods.
@@ -82,18 +82,18 @@
 */
 
 /**
- * See (http://jquery.com/).
+ * See (https://jquery.com/).
  * @name $
  * @class 
- * See the jQuery Library  (http://jquery.com/) for full details.  This just
+ * See the jQuery Library  (https://jquery.com/) for full details.  This just
  * documents the function and classes that are added to jQuery by this plug-in.
  */
  
 /**
- * See (http://jquery.com/)
+ * See (https://jquery.com/)
  * @name fn
  * @class 
- * See the jQuery Library  (http://jquery.com/) for full details.  This just
+ * See the jQuery Library  (https://jquery.com/) for full details.  This just
  * documents the function and classes that are added to jQuery by this plug-in.
  * @memberOf $
  */

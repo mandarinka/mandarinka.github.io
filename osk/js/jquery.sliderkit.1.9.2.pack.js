@@ -1,6 +1,6 @@
 /** 
  *  Slider Kit v1.9.2 (packed)
- *  http://www.kyrielles.net/sliderkit
+ *  https://www.kyrielles.net/sliderkit
  *  
  *  Copyright (c) 2010-2012 Alan Frog
  *  Licensed under the GNU General Public License

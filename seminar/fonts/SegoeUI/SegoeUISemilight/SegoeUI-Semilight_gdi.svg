@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
-<svg xmlns="http://www.w3.org/2000/svg">
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg xmlns="https://www.w3.org/2000/svg">
 <defs>
 <font id="SegoeUI-Semilight" horiz-adv-x="1551">
 <font-face underline-position="-119" font-weight="350" descent="-410" panose-1="2 11 4 2 4 2 4 2 2 3" units-per-em="2048" unicode-range="U+000D-2666" bbox="-327 -482 2679 2026" x-height="1024" underline-thickness="119" font-family="SegoeUI" ascent="1638" cap-height="1434"/>
 <missing-glyph horiz-adv-x="2048"/>
 <glyph glyph-name=".notdef" horiz-adv-x="2048"/>
 <glyph glyph-name="glyph1" horiz-adv-x="0"/>
-<glyph glyph-name="uni000D" horiz-adv-x="0" unicode=""/>
+<glyph glyph-name="uni000D" horiz-adv-x="0" unicode="
+"/>
 <glyph glyph-name="space" horiz-adv-x="561" unicode=" "/>
 <glyph glyph-name="exclam" horiz-adv-x="582" unicode="!" d="M291 -18q-40 0 -68 27.5t-28 67.5q0 41 28 68.5t68 27.5q19 0 36 -7t30.5 -20t21.5 -30.5t8 -38.5q0 -20 -8 -37.5t-21.5 -30.5t-30.5 -20t-36 -7zM344 403h-111l-14 1031h139z"/>
 <glyph glyph-name="quotedbl" horiz-adv-x="744" unicode='&quot;' d="M285 986h-115v448h115v-448zM575 986h-115v448h115v-448z"/>
