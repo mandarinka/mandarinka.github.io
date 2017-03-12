@@ -463,6 +463,18 @@ template {
 
 /* Main styles
    ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+a {
+  color: #898989;
+  text-decoration: none;
+  border-bottom: 1px solid #c2c2c2;
+}
+a:hover {
+  border-bottom-color: transparent;
+}
+
 .container {
   display: flex;
   min-height: 100vh;
@@ -475,32 +487,149 @@ template {
   padding-right: 112px;
   border-top: 13px solid #df5255; 
   box-sizing: border-box;
+  font-size: 14px;
 }
 .content {
   flex: 1;
-}
-.footer {
-  padding-bottom: 100px;
 }
 .main-info {
   display: inline-block;
   position: relative;
 }
 .nav-container {
-  padding-left: 50%;
+  padding-left: 47.5%;
 }
 .menu {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+.footer {
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+.footer-logo {
+  font-family: 'C39HrP24DhTt', sans-serif;
+  font-size: 72px;
+  /*color: #a5a3a3;*/
+  color: #b9b9b9;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.title {
+  font-size: 48px;
+  display: inline-block;
+  margin-top: 250px;
+  margin-bottom: 0;
+}
+.sub-title {
+  color: #df5255;
+  font-size: 24px;
+  display: block;
+  text-align: right;
+}
+.contacts {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 0;
+}
+.nav-icon {
+  display: inline-block; 
+  vertical-align: top;
+  font-size: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%; 
+  background-size: contain;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: opacity ease .3s;
+}
+.nav-icon:first-child {
+  margin-left: 0;
+}
+.nav-icon:hover {
+  opacity: 0.8;
+}
+.nav-icon.gh {
+  background-image: url(../img/github.svg);
+}
+.nav-icon.fb {
+  background-image: url(../img/facebook.svg);
+}
+.nav-icon.email {
+  background-image: url(../img/email.svg);
+}
+.menu {
+  font-size: 16px;
+}
+.menu li {
+  margin-bottom: 3px;
+}
+.design {
+  color: rgba(148, 148, 148, 0.7);
+  font-size: 13px;
+}
+.design a {
+  border-bottom: 0;  
+  color: rgba(148, 148, 148, 0.7);
+}
+.arrow {
+  display: inline-block;
+  margin-top: 250px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+  border: 0;
+  transition: opacity ease .3s;
+}
+.arrow:before {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.arrow:before {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border-style: solid;
+  border-color: #df5255;
+  border-width: 0;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  transform: rotate(-45deg);
+}
+.arrow:hover,
+.arrow:hover:before {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1620px) {
+  .title,
+  .arrow {
+    margin-top: 100px;
+  }
+  .contacts {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .title,
+  .arrow {
+    margin-top: 50px;
+  }
+}
 @media screen and (max-width: 768px) {
   .container {
     padding-left: 60px;
     padding-right: 60px;
   }
-  .footer {
-    padding-bottom: 60px;
+  .footer-logo {
+    font-size: 62px;
   }
 }
 @media screen and (max-width: 560px) {
@@ -508,68 +637,29 @@ template {
     padding-left: 30px;
     padding-right: 30px;
   }
-  .footer {
-    padding-bottom: 30px;
+  .footer-logo {
+    font-size: 52px;
   }
 }
-/* html {
-   height: 100%;
- }
- body {
-   font-family: 'Open Sans', sans-serif;
-   background-color: #fff;
-   color: #000;
-   margin-left: auto;
-   margin-right: auto;
-   font-weight: 300;
-
-  min-height: 100vh;
-   display: flex;
-   flex-direction: column;
- }
- .container {
-   border-top: 13px solid #df5255;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-   padding-left: 112px;
-   padding-right: 112px;
-
- }
-
- .content {
-   flex: 1 0 auto;
-
- }*/
-.footer {
-/*   flex: 0 0 auto;
-   min-height: 250px;*/
-  margin-top: auto;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-}
-
-.title {
-  font-size: 48px;
-  display: inline-block;
-  margin-top: 250px;
-  margin: 0;
-}
-@media screen and (max-width: 1620px) {
+@media screen and (max-width: 480px) {
   .title {
-    margin-top: 150px;
+    font-size: 32px;
   }
-}
-@media screen and (max-width: 1024px) {
-  .title {
-    margin-top: 100px;
+  .sub-title {
+    font-size: 18px;
   }
-}
-.sub-title {
-  color: #df5255;
-  font-size: 24px;
-  display: block;
-  text-align: right;
+  .contacts {
+    margin-bottom: 15px;
+  }
+  .nav-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .menu {
+    font-size: 14px;
+  }
+  .footer-logo {
+    font-size: 42px;
+    padding-bottom: 35px;
+  }
 }
