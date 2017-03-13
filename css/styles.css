@@ -541,6 +541,7 @@ a:hover {
   width: 42px;
   height: 42px;
   border-radius: 50%; 
+  border: 0;
   background-size: contain;
   margin-left: 5px;
   margin-right: 5px;
