@@ -9,8 +9,8 @@
     font-weight: normal;
     font-style: normal; 
 
-    src: url('fonts/officinaserifmediumc-webfont.eot');
-    src: url('fonts/officinaserifmediumc-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/officinaserifmediumc-webfont.woff2') format('woff2'), url('fonts/officinaserifmediumc-webfont.woff') format('woff'), url('fonts/officinaserifmediumc-webfont.svg#officinaserifmediumcregular') format('svg');
+    src: url('../fonts/officinaserifmediumc-webfont.eot');
+    src: url('../fonts/officinaserifmediumc-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/officinaserifmediumc-webfont.woff2') format('woff2'), url('../fonts/officinaserifmediumc-webfont.woff') format('woff'), url('../fonts/officinaserifmediumc-webfont.svg#officinaserifmediumcregular') format('svg');
 }
 
 /* Slider */
