@@ -583,6 +583,11 @@
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     }
+    .posters__item-mobile-xl
+    {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
 }
 
 @media screen and (max-width: 560px)
